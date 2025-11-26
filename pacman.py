@@ -17,6 +17,10 @@ WHITE = (255,255,255)
 WALL_COLOR = (2,13,172)
 YELLOW = (255,210,0)
 
+GHOST_COLORS = [(250, 127, 5),(250, 5, 5),(5, 197, 250),(250, 5, 246)]
+
+GHOST_1_X,GHOST_1_Y = 52,19
+
 window = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Pacman")
 
@@ -52,6 +56,10 @@ def is_wall(pacman_x,pacman_y,maze):
            return True
       return False
 
+def draw_ghost(ghost_positions):
+    for position in ghost_positions:
+        pygame.draw.rect(window,GHOST_COLORS[0],(position[0] * TILE +2, position[1] + TILE +2, TILE-4,TILE-4))
+
 def draw_score_and_lives(score,lives,padding,font):
     scores_text=f"Score: {score} Lives: {lives}"
     text_surf=font.render(scores_text,True, WHITE)
@@ -72,6 +80,10 @@ def main():
                 maze[y][x] = '.'
     pacman_x = 31
     pacman_y = 9
+
+    ghost_1_x = GHOST_1_X
+    ghost_1_y = GHOST_1_Y
+
     score=0
     padding=10
     font=pygame.font.SysFont(None,36)
@@ -102,6 +114,7 @@ def main():
         draw_maze(maze=maze)
         draw_pacman(pacman_x,pacman_y)
         draw_score_and_lives(score,lives,padding,font)
+        draw_ghost([(ghost_1_x,ghost_1_y)])
         pygame.display.flip()
         clock.tick(FPS)
 
