@@ -19,7 +19,9 @@ YELLOW = (255,210,0)
 
 GHOST_COLORS = [(250, 127, 5),(250, 5, 5),(5, 197, 250),(250, 5, 246)]
 
-GHOST_1_X,GHOST_1_Y = 52,19
+GHOST_1_X,GHOST_1_Y = 50,16
+
+horizontal_ghost_dir = 1
 
 window = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Pacman")
@@ -58,7 +60,7 @@ def is_wall(pacman_x,pacman_y,maze):
 
 def draw_ghost(ghost_positions):
     for position in ghost_positions:
-        pygame.draw.rect(window,GHOST_COLORS[0],(position[0] * TILE +2, position[1] + TILE +2, TILE-4,TILE-4))
+        pygame.draw.rect(window,GHOST_COLORS[0],(position[0] * TILE +2, position[1] * TILE +2, TILE-4,TILE-4))
 
 def draw_score_and_lives(score,lives,padding,font):
     scores_text=f"Score: {score} Lives: {lives}"
@@ -71,6 +73,18 @@ def is_food(pacman_x,pacman_y,maze):
     if maze[pacman_y][pacman_x] == '.':
         return True
     return False
+
+def horizontal_ghost_movement(ghost_x,ghost_y):
+    global horizontal_ghost_dir
+    if horizontal_ghost_dir == 1:
+        ghost_x += 1
+        if ghost_x == COLS-3:
+            horizontal_ghost_dir = -1
+    if horizontal_ghost_dir == -1:
+        ghost_x -= 1
+        if ghost_x == 2:
+            horizontal_ghost_dir = 1
+    return ghost_x,ghost_y
 
 def main():
     maze = load_maze_from_file()
@@ -111,6 +125,7 @@ def main():
             maze[pacman_y][pacman_x] = ' '
             score += 1
         window.fill(BLACK)
+        ghost_1_x,ghost_1_y = horizontal_ghost_movement(ghost_1_x,ghost_1_y)
         draw_maze(maze=maze)
         draw_pacman(pacman_x,pacman_y)
         draw_score_and_lives(score,lives,padding,font)
