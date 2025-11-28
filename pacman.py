@@ -61,8 +61,8 @@ def is_wall(pacman_x,pacman_y,maze):
       return False
 
 def draw_ghost(ghost_positions):
-    for position in ghost_positions:
-        pygame.draw.rect(window,GHOST_COLORS[0],(position[0] * TILE +2, position[1] * TILE +2, TILE-4,TILE-4))
+    for i,position in enumerate(ghost_positions):
+        pygame.draw.rect(window,GHOST_COLORS[i],(position[0] * TILE +2, position[1] * TILE +2, TILE-4,TILE-4))
 
 def draw_score_and_lives(score,lives,padding,font):
     scores_text=f"Score: {score} Lives: {lives}"
