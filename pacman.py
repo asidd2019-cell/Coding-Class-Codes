@@ -21,8 +21,10 @@ GHOST_COLORS = [(250, 127, 5),(250, 5, 5),(5, 197, 250),(250, 5, 246)]
 
 GHOST_1_X,GHOST_1_Y = 50,16
 GHOST_2_X,GHOST_2_Y = 8,10
+GHOST_3_X,GHOST_3_Y = 29,20
 horizontal_ghost_dir = 1
 vertical_ghost_dir = 1
+following_ghost_dir = 1
 
 window = pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("Pacman")
@@ -100,6 +102,10 @@ def vertical_ghost_movement(ghost_x,ghost_y):
             vertical_ghost_dir = 1
     return ghost_x,ghost_y
 
+def following_ghost_movement(pacman_x,pacman_y):
+    global following_ghost_dir
+    following_ghost_dir = pacman_x and pacman_y
+    
 
 def main():
     maze = load_maze_from_file()
@@ -114,6 +120,8 @@ def main():
     ghost_1_y = GHOST_1_Y
     ghost_2_x = GHOST_2_X
     ghost_2_y = GHOST_2_Y
+    ghost_3_x = GHOST_3_X
+    ghost_3_y = GHOST_3_Y
     score=0
     padding=10
     font=pygame.font.SysFont(None,36)
@@ -146,7 +154,7 @@ def main():
         draw_maze(maze=maze)
         draw_pacman(pacman_x,pacman_y)
         draw_score_and_lives(score,lives,padding,font)
-        draw_ghost([(ghost_1_x,ghost_1_y),(ghost_2_x,ghost_2_y)])
+        draw_ghost([(ghost_1_x,ghost_1_y),(ghost_2_x,ghost_2_y),(ghost_3_x,ghost_3_y)])
         pygame.display.flip()
         clock.tick(FPS)
 
