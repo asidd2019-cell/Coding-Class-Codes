@@ -2,7 +2,7 @@ import pygame
 import random
 import os
 import time
-
+from collections import deque
 pygame.init()
 ROWS = 24
 TILE = 16
@@ -103,6 +103,49 @@ def vertical_ghost_movement(ghost_x,ghost_y):
             vertical_ghost_dir = 1
     return ghost_x,ghost_y
 
+
+def follower_ghost(ghost_x,ghost_y,px,py,maze):
+    directions = [(1,0),(-1,0),(0,1),(0,-1)]
+
+    queue = deque()
+    queue.append((ghost_x,ghost_y))
+    visited = set([(ghost_x,ghost_y)])
+    parent = {(ghost_x,ghost_y):None}
+
+    while queue:
+        x,y = queue.popleft()
+
+        if (x,y) == (px,py):
+            break
+
+        for dx,dy in directions:
+            nx,ny = x+dx, y+dy
+            if (0 <= nx < COLS and 0<= ny < ROWS and maze[ny][nx] not in ('|','#','%') and (nx,ny) not in visited):
+                visited.add((nx,ny))
+                parent[(nx,ny)] = (x,y)
+                queue.append((nx,ny))
+    
+    if (px,py) not in parent:
+        return ghost_x,ghost_y
+
+    curr = (px,py)
+    while parent[curr] != (ghost_x,ghost_y) and parent[curr] is not None:
+        curr = parent[curr]
+
+    return curr
+
+def random_ghost(gx, gy,maze):
+    # choose a random valid direction; if none, stay
+    choices = []
+    if not is_wall(gx - 1, gy,maze): choices.append((-1, 0))
+    if not is_wall(gx + 1, gy,maze): choices.append((1, 0))
+    if not is_wall(gx, gy - 1,maze): choices.append((0, -1))
+    if not is_wall(gx, gy + 1,maze): choices.append((0, 1))
+    if choices:
+        dx, dy = random.choice(choices)
+        return gx + dx, gy + dy
+    return gx, gy
+
 def main():
     maze = load_maze_from_file()
     for y in range(1,ROWS-1):
@@ -150,6 +193,8 @@ def main():
         window.fill(BLACK)
         ghost_1_x,ghost_1_y = horizontal_ghost_movement(ghost_1_x,ghost_1_y)
         ghost_2_x,ghost_2_y = vertical_ghost_movement(ghost_2_x,ghost_2_y)
+        ghost_3_x,ghost_3_y = random_ghost(ghost_3_x,ghost_3_y,maze)
+        ghost_4_x,ghost_4_y = follower_ghost(ghost_4_x,ghost_4_y,pacman_x,pacman_y,maze)
         draw_maze(maze=maze)
         draw_pacman(pacman_x,pacman_y)
         draw_score_and_lives(score,lives,padding,font)
