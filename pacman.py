@@ -206,6 +206,18 @@ def main():
         draw_pacman(pacman_x,pacman_y)
         draw_score_and_lives(score,lives,padding,font)
         draw_ghost([(ghost_1_x,ghost_1_y),(ghost_2_x,ghost_2_y),(ghost_3_x,ghost_3_y),(ghost_4_x,ghost_4_y)])
+        if (pacman_x,pacman_y) in ((ghost_1_x,ghost_1_y),(ghost_2_x,ghost_2_y),(ghost_3_x,ghost_3_y),(ghost_4_x,ghost_4_y)):
+                lives -= 1
+                pacman_x = 31
+                pacman_y = 9
+                ghost_1_x = GHOST_1_X
+                ghost_1_y = GHOST_1_Y
+                ghost_2_x = GHOST_2_X
+                ghost_2_y = GHOST_2_Y
+                ghost_3_x = GHOST_3_X
+                ghost_3_y = GHOST_3_Y
+                ghost_4_x = GHOST_4_X
+                ghost_4_y = GHOST_4_Y
         pygame.display.flip()
         clock.tick(FPS)
 
