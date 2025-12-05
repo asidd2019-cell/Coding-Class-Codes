@@ -218,6 +218,11 @@ def main():
                 ghost_3_y = GHOST_3_Y
                 ghost_4_x = GHOST_4_X
                 ghost_4_y = GHOST_4_Y
+
+        if not any(maze[r][c] == '.' for r in range(ROWS) for c in range (COLS)):
+            running=False
+            pygame.time.wait(1000)
+            
         pygame.display.flip()
         clock.tick(FPS)
 
