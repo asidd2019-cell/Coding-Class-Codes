@@ -103,8 +103,14 @@ def vertical_ghost_movement(ghost_x,ghost_y):
             vertical_ghost_dir = 1
     return ghost_x,ghost_y
 
-
+move_follower = True
 def follower_ghost(ghost_x,ghost_y,px,py,maze):
+    global move_follower
+
+    move_follower = not move_follower
+    if not move_follower:
+        return ghost_x,ghost_y
+    
     directions = [(1,0),(-1,0),(0,1),(0,-1)]
 
     queue = deque()
@@ -136,6 +142,7 @@ def follower_ghost(ghost_x,ghost_y,px,py,maze):
 
 def random_ghost(gx, gy,maze):
     # choose a random valid direction; if none, stay
+    
     choices = []
     if not is_wall(gx - 1, gy,maze): choices.append((-1, 0))
     if not is_wall(gx + 1, gy,maze): choices.append((1, 0))
