@@ -74,6 +74,30 @@ def draw_score_and_lives(score,lives,padding,font):
     text_rect.bottomleft=(WIDTH - padding,padding)
     window.blit(text_surf,(8, ROWS * TILE + 4))
    
+def win_screen(score,font):
+    window.fill(BLACK)
+    output_text = f"""You Won!"""
+    output_text2 = f"""Score: {score}"""
+    text_surf=font.render(output_text, True, WHITE)
+    text_rect=text_surf.get_rect(center=(550,160))
+    window.blit(text_surf,text_rect)
+    text_surf=font.render(output_text2, True, WHITE)
+    text_rect=text_surf.get_rect(center=(550,125))
+    window.blit(text_surf,text_rect)
+    pygame.display.flip()
+
+def lose_screen(score,font):
+    window.fill(BLACK)
+    output_text = f"""You Lost!"""
+    output_text2 = f"""Score: {score}"""
+    text_surf=font.render(output_text, True, WHITE)
+    text_rect=text_surf.get_rect(center=(550,160))
+    window.blit(text_surf,text_rect)
+    text_surf=font.render(output_text2, True, WHITE)
+    text_rect=text_surf.get_rect(center=(550,125))
+    window.blit(text_surf,text_rect)
+    pygame.display.flip()
+
 def is_food(pacman_x,pacman_y,maze):
     if maze[pacman_y][pacman_x] == '.':
         return True
@@ -174,7 +198,7 @@ def main():
     score=0
     padding=10
     font=pygame.font.SysFont(None,36)
-    lives=3
+    lives=1000000000000
     running=True
     while running:
         for event in pygame.event.get():
@@ -219,10 +243,15 @@ def main():
                 ghost_4_x = GHOST_4_X
                 ghost_4_y = GHOST_4_Y
 
+        if lives == 0:
+            lose_screen(score,font)
+            time.sleep(2)
+            running = False
+
         if not any(maze[r][c] == '.' for r in range(ROWS) for c in range (COLS)):
-            running=False
-            pygame.time.wait(1000)
-            
+            win_screen(score,font)
+            running = False
+
         pygame.display.flip()
         clock.tick(FPS)
 
