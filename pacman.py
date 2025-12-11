@@ -245,7 +245,7 @@ def main():
 
         if lives == 0:
             lose_screen(score,font)
-            time.sleep(2)
+            time.sleep(5)
             running = False
 
         if not any(maze[r][c] == '.' for r in range(ROWS) for c in range (COLS)):
