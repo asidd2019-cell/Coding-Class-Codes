@@ -3,15 +3,24 @@
     <head>
         <title>Table</title>
         <style>
-            table{
+
+            .table-parent{
                 border: 1px solid rgb(175, 175, 175);
-                /* border-collapse: collapse; */
+                width: fit-content;
                 border-radius: 5px;
+            }
+
+            table{
+                border-collapse: collapse;
                 border-spacing: 0px;
             }
             
             tr{
-                border-top: 1px solid grey;
+                border-bottom: 1px solid grey;
+            }
+
+            tr:last-child{
+                border-bottom: none;
             }
 
             td{
@@ -124,11 +133,16 @@
                 box-shadow: none;
             }
 
+            tr:hover{
+                background-color: #e4e3e367;
+            }
+
         </style>
     </head>
 
     <body>
-        <table>
+        <div class="table-parent">
+            <table>
 
             <thead>
                 <th>Name</th>
@@ -281,5 +295,6 @@
 
            </tbody>
         </table>
+        </div>
     </body>
 </html>
