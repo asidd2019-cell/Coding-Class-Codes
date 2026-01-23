@@ -3,6 +3,34 @@
     <head>
         <title>Table Assessment</title>
         <style>
+            table{
+                border: 1px solid rgb(199, 198, 198);
+                width: 800px;
+                border-collapse: collapse;
+                border-spacing: 10px;
+                border-radius: 5px;
+            }
+
+            .product-parent img{
+                height: 150px;
+                width: 150px;
+            }
+
+            th{
+                border-bottom: 1px solid black;
+                margin-right: 100px;
+                text-align: left;
+            }
+
+            tr{
+                border: 1px solid black;
+                border-bottom: 1px solid black;
+                margin: 5px;
+            }
+
+            td{
+                margin-left: 100px;
+            }
 
         </style>
     </head>
@@ -11,11 +39,11 @@
         <table>
            <tbody>
             <thead>
-                <th></th>
-                <th>Product</th>
-                <th>Qty</th>
-                <th>Price</th>
-                <th>Action</th>
+                    <th></th>
+                    <th>Product</th>
+                    <th>Qty</th>
+                    <th>Price</th>
+                    <th>Action</th>
             </thead>
 
             <tr>
@@ -64,6 +92,34 @@
 
                 <td>
                     $2499
+                </td>
+
+                <td>
+                    <button>Remove</button>
+                </td>
+
+                    </div>
+                
+            </tr>
+
+            <tr>
+                <td>
+                    <div class="product-parent">
+                        <div class="img-container">
+                            <img src="data:image/jpeg;base64,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" alt="">
+                        </div>
+                </td>
+
+                <td>
+                    IPhone 12
+                </td>
+
+                <td>
+                    12
+                </td>
+
+                <td>
+                    $999
                 </td>
 
                 <td>
