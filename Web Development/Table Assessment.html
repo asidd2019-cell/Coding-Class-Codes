@@ -4,7 +4,7 @@
         <title>Table Assessment</title>
         <style>
             .table-parent{
-                border: 1px solid rgb(119, 116, 116);
+                border: 1px solid rgb(247, 244, 244);
                 border-radius: 5px;
                 width: 800px;
             }
@@ -25,14 +25,14 @@
                 color: grey;
                 font-family: Futura, Trebuchet MS, Arial, sans-serif;
                 height: 25px;
-                border-bottom: 1px solid rgb(165, 156, 156);
+                border-bottom: 1px solid rgb(214, 210, 210);
                 margin-right: 100px;
                 text-align: left;
             }
 
             tr{
                 font-family: Futura, Trebuchet MS, Arial, sans-serif;
-                border-bottom: 1px solid rgb(165, 156, 156);
+                border-bottom: 1px solid rgb(247, 244, 244);
                 margin: 5px;
             }
 
@@ -57,7 +57,15 @@
             }
 
             .quantity-buttons{
+                color: black;
+                border: 0px solid grey;
+                border-radius: 100%;
+                background-color: rgb(231, 227, 227);
+            }
 
+            .quantity-buttons-flex{
+                display:flex;
+                gap: 10px;
             }
 
         </style>
@@ -120,7 +128,7 @@
                     </td>
 
                     <td>
-                        <div class="quantity-buttons">
+                        <div class="quantity-buttons-flex">
                             <button class="quantity-buttons">-</button>
                             <span>12</span>
                             <button class="quantity-buttons">+</button>
@@ -152,7 +160,7 @@
                     </td>
 
                     <td>
-                        <div class="quantity-buttons">
+                        <div class="quantity-buttons-flex">
                             <button class="quantity-buttons">-</button>
                             <span>12</span>
                             <button class="quantity-buttons">+</button>
