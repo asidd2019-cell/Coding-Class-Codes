@@ -3,7 +3,10 @@
 <head>
     <style>
         .form-parent{
-            display: flex;     
+            height: 100vh;
+            display: flex;
+            justify-content: center;  
+            align-items: center;
         }
 
         form{
@@ -13,6 +16,32 @@
             flex-direction: column;
         }
 
+        input{
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+
+        input:focus{
+            border: none;
+            border-bottom: 1px solid rgb(22, 95, 206);
+            outline: none;
+        }
+
+        button{
+            box-shadow: none;
+            border: none;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            height: 75px;
+            width: 75px;
+            color: white;
+            background-color: rgb(35, 87, 230);
+            border-radius: 7px;
+        }
+
+        button:hover{
+            background-color: rgb(14, 70, 224);
+        }
     </style>
 </head>
 
@@ -39,6 +68,8 @@
 
             <label for="company">Company</label>
             <input type="text" id="company">
+
+            <button type="submit">Submit</button>
         </form> 
     </div>
 </body>
