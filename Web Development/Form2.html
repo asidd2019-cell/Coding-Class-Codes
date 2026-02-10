@@ -14,6 +14,7 @@
             width: 275px;
             display: flex;
             flex-direction: column;
+            gap: 30px;
         }
 
         input{
@@ -42,32 +43,64 @@
         button:hover{
             background-color: rgb(14, 70, 224);
         }
+
+        .field{
+            position: relative;
+        }
+
+        .field label{
+            position: absolute;
+            left: 1px;
+            top: -5px;
+            transition: 0.25s;
+        }
+
+        .field input:focus + label{
+            top: -20px;
+            font-size: 10px;
+            color: rgb(22, 95, 206);
+        }
+
     </style>
 </head>
 
 <body>
     <div class="form-parent">
         <form>
-            <label for="email">Email Address</label>
-            <input type="email" id="email">
+            <div class="field">
+                <input type="email" id="email">
+                <label for="email">Email Address</label>
+            </div>
 
-            <label for="password">Password</label>
-            <input type="password" id="password">
-            
-            <label for="confirm-password">Confirm Password</label>
-            <input type="password" id="confirm-password">
+            <div class="field">
+                <input type="password" id="password">
+                <label for="password">Password</label>
+            </div>
 
-            <label for="first-name">First Name</label>
-            <input type="text" id="first-name">
+            <div class="field">
+                <input type="password" id="confirm-password">
+                <label for="confirm-password">Confirm Password</label>
+            </div>
 
-            <label for="last-name">Last Name</label>
-            <input type="text" id="last-name">
+            <div class="field">
+                <input type="text" id="first-name">
+                <label for="first-name">First Name</label>
+            </div>
 
-            <label for="phone-number">Phone Number</label>
-            <input type="number" id="phone-number">
+            <div class="field">
+                <input type="text" id="last-name">
+                <label for="last-name">Last Name</label>
+            </div>
 
-            <label for="company">Company</label>
-            <input type="text" id="company">
+            <div class="field">
+                <input type="number" id="phone-number">
+                <label for="phone-number">Phone Number</label>
+            </div>
+
+            <div class="field">
+                <input type="text" id="company">
+                <label for="company">Company</label>
+            </div>
 
             <button type="submit">Submit</button>
         </form> 
