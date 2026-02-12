@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .general-info{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label-input-container{
+            flex-direction: row;
+        }
+
+    </style>
+</head>
+<body>
+    <form>
+        <span>General Information</span>
+        <div class="general-info">
+            <div class="label-input-container">
+                <label for="name">Full Name</label>
+                <input type="text" id="name">
+            </div>
+
+            <div class="label-input-container">
+                <label for="password">Password</label>
+                <input type="password" id="password">
+            </div>
+
+            <div class="label-input-container">
+                <label for="confirm-password">Confirm Password</label>
+                <input type="password" id="confirm-password">
+            </div>
+
+            <div class="label-input-container">
+                <label for="birth-date">Day of Birth</label>
+                <input type="date" id="birth-date">
+            </div>
+
+            <div class="label-input-container">
+                <label for="color">Interface Color</label>
+                <input type="color" id="color">
+            </div>
+        </div>
+
+        <span>More Options</span>
+        <div class="more-options">
+            <label for="region-selection">Please select region</label>
+            <select id="region-selection">
+                <option value="AS">Asia</option>
+                <option value="EU">Europe</option>
+                <option value="AF">Africa</option>
+                <option value="SA">South America</option>
+                <option value="NA">North America</option>
+            </select>
+
+            <label for="language-selection">Select Language</label>
+            <select id="laguage-selection">
+                <option value="EN">English</option>
+                <option value="GE">German</option>
+                <option value="RU">Russian</option>
+                <option value="JA">Japanese</option>
+                <option value="CH">Chinese</option>
+            </select>
+
+        </div>
+        
+    </form>
+</body>
+</html>
