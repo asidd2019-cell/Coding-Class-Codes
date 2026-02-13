@@ -7,21 +7,56 @@
             flex-direction: column;
         }
 
-        .general-info{
+        .form-field-container{
             display: flex;
             flex-direction: column;
+            gap: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .label-input-container{
+            display: flex;
+            padding-left: 20px;
+            display: flex;
             flex-direction: row;
+            gap: 50px;
         }
 
+        .spans{
+            font-weight: 600;
+        }
+
+        label{
+            width: 150px;
+        }
+
+        input{
+            width: 250px;
+            border: none;
+            border-bottom: 1px solid grey;
+        }
+
+        input:focus{
+            outline: none;
+            border-bottom: 1px solid rgb(43, 128, 238);
+        }
+
+        select{
+            border: none;
+            border-bottom: 1px solid grey;
+            width: 250px;
+        }
+
+        .checkbox{
+
+        }
     </style>
 </head>
 <body>
     <form>
-        <span>General Information</span>
-        <div class="general-info">
+        <span class="spans">General Information</span>
+        <div class="form-field-container">
             <div class="label-input-container">
                 <label for="name">Full Name</label>
                 <input type="text" id="name">
@@ -48,28 +83,45 @@
             </div>
         </div>
 
-        <span>More Options</span>
-        <div class="more-options">
-            <label for="region-selection">Please select region</label>
-            <select id="region-selection">
+        <span class="spans">More Options</span>
+        <div class="form-field-container">
+            <div class="label-input-container">
+                <label for="region-selection">Please select region</label>
+                <select id="region-selection">
                 <option value="AS">Asia</option>
                 <option value="EU">Europe</option>
                 <option value="AF">Africa</option>
                 <option value="SA">South America</option>
                 <option value="NA">North America</option>
             </select>
+            </div>
 
-            <label for="language-selection">Select Language</label>
-            <select id="laguage-selection">
+            <div class="label-input-container">
+                <label for="language-selection">Select Language</label>
+                <select id="laguage-selection">
                 <option value="EN">English</option>
                 <option value="GE">German</option>
                 <option value="RU">Russian</option>
                 <option value="JA">Japanese</option>
                 <option value="CH">Chinese</option>
             </select>
+            </div>
 
         </div>
         
+        <span class="spans">Messaging</span>
+        <div class="form-field-container">
+            <div class="label-input-container">
+                <label for="privmessages">Private Messages</label>
+                <input type="checkbox" id="privmessages" class="checkbox">
+            </div>
+
+            <div class="label-input-container">
+                <label for="notifications">Email Notifications</label>
+                <input type="checkbox" id="notifications" class="checkbox">
+            </div>
+        </div>
+
     </form>
 </body>
 </html>
