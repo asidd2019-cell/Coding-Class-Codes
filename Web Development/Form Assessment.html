@@ -3,6 +3,7 @@
 <head>
     <style>
         form{
+            width: 450px;
             display: flex;
             flex-direction: column;
         }
@@ -49,7 +50,14 @@
         }
 
         .checkbox{
+            width: auto;
+        }
 
+        .proceed-button{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            
         }
     </style>
 </head>
@@ -122,6 +130,39 @@
             </div>
         </div>
 
+        <span class="spans">Online Status</span>
+        <div class="form-field-container">
+            <div class="label-input-container">
+                <label for="showstatus">Show when online</label>
+                <input type="radio" id="showstatus" name="status" class="checkbox">
+            </div>
+
+            <div class="label-input-container">
+                <label for="hiddenstatus">Always Hidden</label>
+                <input type="radio" id="hidestatus" name="status" class="checkbox">
+            </div>
+        </div>
+        
+        <span class="spans">Advanced Items</span>
+        <div class="form-field-container">
+            <div class="label-input-container">
+                <label for="skill-level-selection">Skill Level</label>
+                <select id="skill-level-selection">
+                <option value="AD">Admin</option>
+                <option value="PU">Power User</option>
+                <option value="U">User</option>
+                </select>
+            </div>
+
+            <div class="label-input-container">
+                <label for="summary-ideas">Highlight current line</label>
+                <textarea name="" id="ideasummary"></textarea>
+            </div> 
+        </div>
+
+            <div class="proceed-button">
+                <button>Proceed</button>
+            </div>
     </form>
 </body>
 </html>
