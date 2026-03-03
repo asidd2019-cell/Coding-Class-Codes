@@ -13,9 +13,35 @@ nav{
     padding-right: 70px;
 }
 
-ul{
+.nav-ul{
     display: flex;
     flex-direction: row;
     list-style-type: none;
     gap: 20px;
 }
+
+.nav-ul-li{
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.nav-ul-li:hover{
+    transform: scale(1.2);
+}
+
+.nav-ul-li::after{
+    display: inline-block;
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+    content: '';
+    width: 0px;
+    height: 2px;
+    background-color: rgb(10, 53, 133);
+    transition: all 0.5s;
+}
+
+.nav-ul-il:hover::after{
+    width: 100%;
+}
+
