@@ -1,3 +1,9 @@
+:root{
+    --hue-color: 224;
+    --first-color: hsl(var(--hue-color), 89%, 60%);
+    --second-color: hsl(var(--hue-color), 56%, 12%);
+}
+
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -11,6 +17,10 @@ nav{
     border-bottom: 1px solid grey;
     padding-left: 70px;
     padding-right: 70px;
+}
+
+nav div:first-child{
+    color: var(--first-color);
 }
 
 .nav-ul{
@@ -37,11 +47,11 @@ nav{
     content: '';
     width: 0px;
     height: 2px;
-    background-color: rgb(10, 53, 133);
+    background-color: var(--first-color);
     transition: all 0.5s;
 }
 
-.nav-ul-il:hover::after{
+.nav-ul-li:hover::after{
     width: 100%;
 }
 
