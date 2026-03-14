@@ -4,6 +4,11 @@
     --second-color: hsl(var(--hue-color), 56%, 12%);
 }
 
+body,html{
+    padding: 0px;
+    margin: 0px;
+}
+
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -60,7 +65,8 @@ nav div:first-child{
     flex-direction: row;
     padding-top: 60px;
     height: 100vh;
-    width: 100vw;
+    width: 99vw;
+    max-width: 100%;
 }
 
 .home-left{
@@ -113,6 +119,9 @@ nav div:first-child{
 
 #about{
     display: flex;
+    height: 100vh;
+    width: 99vw;
+    max-width: 100%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -120,7 +129,29 @@ nav div:first-child{
 
 .about-text{
     border: 2px solid rgb(187, 187, 187);
+    box-shadow: 5px 5px 10px #959595a8;
     border-radius: 15px;
     padding-left: 30px;
     padding-right: 30px;
+}
+
+#skills{
+    height: 100vh;
+    width: 99vw;
+    max-width: 100%;
+}
+
+.skills-main{
+    border: 1px solid black;
+}
+
+.skills-section{
+    border: 1px solid black;
+}
+
+.skill-level{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
 }

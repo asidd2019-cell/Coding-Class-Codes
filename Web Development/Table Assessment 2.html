@@ -17,13 +17,42 @@
         }
 
         thead{
+            font-family: FreeMono, monospace;
             background-color: rgb(22, 15, 32);
             color: white;
+        }
+
+        tr{
+            font-family: FreeMono, monospace;
+        }
+
+        th{
+            padding-left: 20px;
+            padding: 10px;
         }
 
         td{
             text-align: center;
             padding: 10px;
+        }
+
+        tr:nth-child(even){
+            background-color: rgb(238, 238, 238);
+        }
+
+        .heading-row{
+            border: 1px solid grey;
+            border-radius: 10px;
+        }
+
+        th:nth-child(1){
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 5px;
+        }
+
+        th:nth-child(6){
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 5px;
         }
     </style>
 </head>
@@ -31,7 +60,7 @@
     <div class="table-parent">
         <table>
             <thead>
-                <tr>
+                <tr class="heading-row">
                     <th>Date</th>
                     <th>Order ID</th>
                     <th>Name</th>
@@ -54,10 +83,28 @@
                 <tr>
                     <td>2017-09-28 05:57</td>
                     <td>200397</td>
-                    <td>Samsun S8 Black</td>
+                    <td>Samsung S8 Black</td>
                     <td>$756.00</td>
                     <td>1</td>
                     <td>$756.00</td>
+                </tr>
+
+                <tr>
+                <td>2017-09-26 05:57</td> 
+                <td>200396</td>
+                <td>Game Console Controller</td>
+                <td>$22.00</td>
+                <td>2</td>
+                <td>$44.00</td>
+                </tr>
+
+                <tr>
+                    <td>2017-09-29 01:22</td>
+                    <td>200398</td>
+                    <td>IPhone X 54Gb Grey</td>
+                    <td>$999.00</td>
+                    <td>1</td>
+                    <td>$999.00</td>
                 </tr>
 
                 <tr>
