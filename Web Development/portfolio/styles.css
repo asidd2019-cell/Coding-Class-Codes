@@ -142,16 +142,45 @@ nav div:first-child{
 }
 
 .skills-main{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    width: 500px;
     border: 1px solid black;
+    border-radius: 5px;
 }
 
 .skills-section{
-    border: 1px solid black;
+
 }
 
 .skill-level{
+    gap: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: baseline;
     border: 1px solid black;
+    border-radius: 5px;
 }
+
+#skill1{
+    background-color: var(--first-color);
+    height: 4px;
+    width: 80%;
+}
+
+#skill2{
+    background-color: var(--first-color);
+    height: 4px;
+    width: 100%;
+}
+
+#skill3{
+    background-color: var(--first-color);
+    height: 4px;
+    width: 90%;
+}
+
