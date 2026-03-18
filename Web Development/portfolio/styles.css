@@ -148,10 +148,27 @@ nav div:first-child{
     width: 500px;
     border: 1px solid black;
     border-radius: 5px;
+    height: 100px;
+    transition: all 0.5s;
+    overflow: hidden;
 }
 
 .skills-section{
+    display: none;
+}
 
+.skills-main:hover + .skills-section{
+    display: flex;
+}
+
+.skills-main:hover{
+    height: 250px;
+}
+
+.skills-main h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .skill-level{
