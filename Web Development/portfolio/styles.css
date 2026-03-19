@@ -136,6 +136,9 @@ nav div:first-child{
 }
 
 #skills{
+    gap: 20px;
+    display: flex;
+    flex-direction: row;
     height: 100vh;
     width: 99vw;
     max-width: 100%;
@@ -155,10 +158,6 @@ nav div:first-child{
 
 .skills-section{
     display: none;
-}
-
-.skills-main:hover + .skills-section{
-    display: flex;
 }
 
 .skills-main:hover{
@@ -200,4 +199,6 @@ nav div:first-child{
     height: 4px;
     width: 90%;
 }
+
+
 
