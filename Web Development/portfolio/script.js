@@ -6,10 +6,11 @@ skillsMain.forEach((skill, index) => {
   skill.addEventListener('mouseenter', () => {
     skillsSection[index].style.display = 'flex';
     skillsSection[index].style.flexDirection = 'column';
+    skillsSection[index].style.opacity = '100%';
   });
 
   // Hide the skill section when the mouse leaves the skill main item
   skill.addEventListener('mouseleave', () => {
-    skillsSection[index].style.display = 'none';
+    skillsSection[index].style.opacity = '0%';
   });
 });
