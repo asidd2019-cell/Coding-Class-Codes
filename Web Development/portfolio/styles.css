@@ -235,7 +235,7 @@ nav div:first-child{
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 20px;
-    width: 500px;
+    width: fit-content;
     border: 1px solid black;
     border-radius: 5px;
     height: 200px;
@@ -248,17 +248,25 @@ nav div:first-child{
     transition: all 0.5s;
 }
 
-.projects-main:hover{
-    width: 700px;
+.project-parent{
+    display: flex;
+    width: fit-content;
+    flex-direction: row;
+    border: 1px solid black;
 }
 
-.projects-main h1{
+/* .project-parent:hover{
+    width: 700px;
+} */
+
+.project-main h1{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .projects-level{
+    width: 200px;
     gap: 10px;
     margin-bottom: 5px;
     padding: 10px;
@@ -269,11 +277,6 @@ nav div:first-child{
     border: 1px solid black;
     border-radius: 5px;
     transition: all 0.5s ease-in;
-}
-
-.projects-level:hover {
-    transform: scalex(1.05);
-    background-color: rgb(231, 230, 230);
 }
 
 .project1{
@@ -307,6 +310,11 @@ nav div:first-child{
     max-width: 100%;
 }
 
-
-
-
+.project-description{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    width: 500px;
+}
