@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .form{
+            height: 500px;
+            width: 600px;
+            background-color: rgb(248, 246, 246);
+        }
+
+        .form-parent{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .first-column{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .second-column{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="form">
+        <h1>Registration</h1>
+    <form>
+        <div class="form-parent">
+            <div class="first-column">
+                <div class="full-name">
+                    <label for="full-name">Full name</label>
+                    <input type="text" id="full-name">
+                </div>
+
+                <div class="email">
+                    <label for="Email">Email</label>
+                    <input type="text" id="Email">
+                </div>
+
+                <div class="password">
+                    <label for="password">Password</label>
+                    <input type="password" id="password">
+                </div>
+            </div>
+
+            <div class="second-column">
+                <div class="user-name">
+                    <label for="user-name">Username</label>
+                    <input type="text" id="user-name">
+                </div>
+
+                <div class="phone-number">
+                    <label for="phone-number">Phone number</label>
+                    <input type="number" id="phone-number">
+                </div>
+
+                <div class="confirm-password">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password">
+                </div>
+            </div>
+        </div>
+
+    </form>
+    </div>
+</body>
+</html>
