@@ -20,6 +20,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            margin-right: 75px;
         }
 
         .second-column{
@@ -27,7 +28,35 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
+            margin-left: 75px;
+        }
+
+        input{
+            height: 30px;
+            width: 200px;
+            margin-bottom: 10px;
+        }
+
+        .box{
+            display: flex;
+            flex-direction: column;
+            font-size: 20px;
+            gap: 10px;
+        }
+
+        .gender-parent{
+            border: 1px solid black;
+            height: 100px;
+            width: 590px;
+        }
+
+        .gender-radio{
+            display: flex;
+            flex-direction: row;
+        }
+
+        input[type="radio"]{
+            margin: 0px;
         }
     </style>
 </head>
@@ -37,40 +66,53 @@
     <form>
         <div class="form-parent">
             <div class="first-column">
-                <div class="full-name">
+                <div class="box">
                     <label for="full-name">Full name</label>
-                    <input type="text" id="full-name">
+                    <input type="text" id="full-name" placeholder="Enter your full name">
                 </div>
 
-                <div class="email">
+                <div class="box">
                     <label for="Email">Email</label>
-                    <input type="text" id="Email">
+                    <input type="text" id="Email" placeholder="Enter your email">
                 </div>
 
-                <div class="password">
+                <div class="box">
                     <label for="password">Password</label>
-                    <input type="password" id="password">
+                    <input type="password" id="password" placeholder="Enter your password">
                 </div>
             </div>
 
             <div class="second-column">
-                <div class="user-name">
+                <div class="box">
                     <label for="user-name">Username</label>
-                    <input type="text" id="user-name">
+                    <input type="text" id="user-name" placeholder="Enter your username">
                 </div>
 
-                <div class="phone-number">
+                <div class="box">
                     <label for="phone-number">Phone number</label>
-                    <input type="number" id="phone-number">
+                    <input type="number" id="phone-number" placeholder="Enter your phone number">
                 </div>
 
-                <div class="confirm-password">
+                <div class="box">
                     <label for="confirm-password">Confirm Password</label>
-                    <input type="password" id="confirm-password">
+                    <input type="password" id="confirm-password" placeholder="Confirm your password">
                 </div>
             </div>
         </div>
 
+        <div class="gender-parent">
+            <h2>Gender</h2>
+            <div class="gender-radio">
+                <div class="gender-1">
+                    <input type="radio" id="male">
+                    <label for="male">Male</label>
+                </div>
+                <div class="gender-2">
+                    <input type="radio" id="female">
+                    <label for="female">Female</label>
+                </div>
+            </div>
+        </div>
     </form>
     </div>
 </body>
