@@ -56,8 +56,44 @@
         }
 
         input[type="radio"]{
-            margin: 0px;
+            width: auto;
+            background-color: grey;
+            appearance: none;
         }
+
+        .gender{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding: 10px;
+        }
+
+
+        .male span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+            background: #ccc;          
+            border: 2px solid #999;
+            position: relative;
+        }
+
+        .female span {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 8px;
+            vertical-align: middle;
+            background: #ccc;          
+            border: 2px solid #999;
+            position: relative;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -103,13 +139,19 @@
         <div class="gender-parent">
             <h2>Gender</h2>
             <div class="gender-radio">
-                <div class="gender-1">
-                    <input type="radio" id="male">
-                    <label for="male">Male</label>
+                <div class="gender">
+                    <label class="male">
+                    <input type="radio" name="gender" id="male">
+                    <span></span>
+                    Male
+                    </label>
                 </div>
-                <div class="gender-2">
-                    <input type="radio" id="female">
-                    <label for="female">Female</label>
+                <div class="gender">
+                    <label class="female">
+                    <input type="radio" name="gender" id="female">
+                    <span></span>
+                    Female
+                    </label>
                 </div>
             </div>
         </div>
