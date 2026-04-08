@@ -233,6 +233,7 @@ nav div:first-child{
     /* height: 100px; */
     /* transition: all 0.5s; */
     overflow: hidden;
+    margin-bottom: 20px;
 }
 
 /* .projects-section{
@@ -268,23 +269,7 @@ nav div:first-child{
     background-color: rgb(231, 230, 230);
 } */
 
-#project1{
-    background-color: var(--first-color);
-    height: 4px;
-    width: 80%;
-}
 
-#project2{
-    background-color: var(--first-color);
-    height: 4px;
-    width: 100%;
-}
-
-#project3{
-    background-color: var(--first-color);
-    height: 4px;
-    width: 90%;
-}
 
 #project h1{
     text-align: center;
@@ -311,4 +296,19 @@ nav div:first-child{
     padding-bottom: 20px;
     height: 250px;
     max-width: 1000px;
+}
+
+footer{
+    background-color: var(--first-color);
+}
+
+i{
+    color: white;
+    font-size: 17px;
+    margin: 7px;
+    gap: 10px;
+}
+
+.span-info{
+    color: white;
 }
