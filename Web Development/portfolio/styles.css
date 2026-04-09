@@ -310,5 +310,25 @@ i{
 }
 
 .span-info{
+    font-size: 20px;
     color: white;
+    margin-right: 10px;
+}
+
+.info-options{
+    margin-left: 200px;
+    font-size: 20px;
+    color: white;
+}
+
+footer{
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.info{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
