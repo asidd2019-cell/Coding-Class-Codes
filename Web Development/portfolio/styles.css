@@ -9,6 +9,11 @@ body,html{
     margin: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 *{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -38,6 +43,16 @@ nav div:first-child{
 .nav-ul-li{
     transition: transform 0.5s;
     position: relative;
+}
+
+a{
+    color: black;
+    text-decoration: none;
+}
+
+.end-nav{
+    color: white;
+    text-decoration: none;
 }
 
 .nav-ul-li:hover{
