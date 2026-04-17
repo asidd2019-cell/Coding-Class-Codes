@@ -9,7 +9,6 @@
     
 .nav-bar {
     width: 100px;
-    background-color: rgb(9, 83, 153);
     grid-row: span 7 / span 7;
 }
 
@@ -31,5 +30,25 @@
     grid-row: span 5 / span 5;
     grid-column-start: 2;
     grid-row-start: 3;
+}
+
+li {
+    margin-bottom: 40px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+.nav-column-organizer{
+    display: flex;
+    flex-direction: column;
+}
+
+i {
+    font-size: 25px;
+    margin-bottom: 7px;
 }
         
