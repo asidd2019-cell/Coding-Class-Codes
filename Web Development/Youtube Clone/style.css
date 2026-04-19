@@ -12,8 +12,11 @@
     grid-row: span 7 / span 7;
 }
 
-.div2 {
-    background-color: rgb(206, 69, 69);
+.top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
     grid-column: span 4 / span 4;
 }
 
@@ -51,4 +54,22 @@ i {
     font-size: 25px;
     margin-bottom: 7px;
 }
+
+.top-bar i {
+    font-size: 17px;
+}
         
+.search-bar-input {
+    background-color: grey;
+    border: none;
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.search-bar-icon {
+    background-color: rgb(128, 128, 128, 0);
+}
