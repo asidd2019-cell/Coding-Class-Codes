@@ -1,4 +1,10 @@
 
+* {
+    --background-color: #0f0f0f;
+    --hover-color: #272727;
+    --icon-background-color: #222222;
+}
+
 .parent {
     height: 100vh;
     display: grid;
@@ -51,6 +57,7 @@ ul {
 }
 
 i {
+    color: white;
     font-size: 25px;
     margin-bottom: 7px;
 }
@@ -60,16 +67,36 @@ i {
 }
         
 .search-bar-input {
-    background-color: grey;
+    width: 500px;
+    background-color: #121212;
+    outline: none;
+    box-shadow: none;
     border: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
 }
 
 .search-bar {
+    background-color: #121212;
+    border-radius: 30px;
     display: flex;
     flex-direction: row;
     border: 1px solid black;
 }
 
 .search-bar-icon {
-    background-color: rgb(128, 128, 128, 0);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: var(--icon-background-color);
+}
+
+body {
+    background-color: var(--background-color);
 }
