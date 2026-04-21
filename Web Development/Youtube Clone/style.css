@@ -56,10 +56,15 @@ ul {
     flex-direction: column;
 }
 
-i {
+.nav-bar i {
     color: white;
     font-size: 25px;
     margin-bottom: 7px;
+}
+
+i {
+    color: white;
+    font-size: 25px;
 }
 
 .top-bar i {
@@ -67,6 +72,7 @@ i {
 }
         
 .search-bar-input {
+    color: white;
     width: 500px;
     background-color: #121212;
     outline: none;
@@ -76,12 +82,17 @@ i {
     border-bottom-left-radius: 30px;
 }
 
+.search-bar:focus-within {
+    border: 1px solid rgb(48, 133, 243);
+}
+
 .search-bar {
     background-color: #121212;
+    padding-left: 10px;
     border-radius: 30px;
     display: flex;
     flex-direction: row;
-    border: 1px solid black;
+    border: 1px solid var(--icon-background-color);
 }
 
 .search-bar-icon {
@@ -92,6 +103,8 @@ i {
     align-items: center;
     height: 30px;
     width: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-left: 10px;
     padding-right: 10px;
     background-color: var(--icon-background-color);
