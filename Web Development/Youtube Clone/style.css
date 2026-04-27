@@ -145,6 +145,12 @@ body {
     color: white;
 }
 
+.account-features {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
 .account-features span {
     color: white;
 }
@@ -163,4 +169,44 @@ body {
 
 .create-feature span {
     margin-left: 5px;
+}
+
+.notifications-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    width: 30px;
+    border: 1px solid var(--background-color);
+    background-color: var(--icon-background-color);
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.profile-picture img {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 25px;
+}
+
+.topics {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    max-width: 100%;
+    gap: 15px;
+}
+
+.topic {
+    color: white;
+    background-color: var(--icon-background-color);
+    border: 1px solid var(--background-color);
+    border-radius: 5px;
+    padding: 5px;
 }
