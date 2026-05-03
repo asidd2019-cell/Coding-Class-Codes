@@ -233,3 +233,20 @@ grid-row-start: 2;
     border-radius: 100%;
     background-color: var(--icon-background-color);
 }
+
+.left-topics-button {
+    position: absolute;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15px;
+    width: 15px;
+    padding-top: 9px;
+    padding-bottom: 7px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border: 1px solid var(--background-color);;
+    border-radius: 100%;
+    background-color: var(--icon-background-color);
+}
