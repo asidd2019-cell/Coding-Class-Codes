@@ -250,3 +250,46 @@ grid-row-start: 2;
     border-radius: 100%;
     background-color: var(--icon-background-color);
 }
+
+.video-thumbnail img {
+    border: 1px solid var(--background-color);
+    border-radius: 10px;
+}
+
+.video-title img {
+    border: 1px solid var(--background-color);
+    border-radius: 10px;
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+.video-title {
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+
+.creator-names {
+    color: grey;
+}
+
+.views-and-date {
+    display: flex;
+    align-items: center;
+}
+
+.views {
+    color: grey;
+    margin-right: 5px;
+}
+
+.date-of-time {
+    color: grey;
+    margin-left: 5px;
+}
+
+.bullet-icon-for-views-and-date {
+    font-size: 5px;
+    color: grey;
+}
