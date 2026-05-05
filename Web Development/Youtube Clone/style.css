@@ -251,6 +251,13 @@ grid-row-start: 2;
     background-color: var(--icon-background-color);
 }
 
+.videos {
+    grid-column: span 4 / span 4;
+    grid-row: span 5 / span 5;
+    grid-column-start: 2;
+    grid-row-start: 3;
+}
+
 .video-thumbnail img {
     border: 1px solid var(--background-color);
     border-radius: 10px;
@@ -293,3 +300,23 @@ grid-row-start: 2;
     font-size: 5px;
     color: grey;
 }
+
+
+.videos-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: auto;
+    gap: 8px;
+}
+    
+
+
+
+
+
+
+
+
+        
