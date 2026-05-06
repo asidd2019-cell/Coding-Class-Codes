@@ -66,6 +66,7 @@ i {
 }
         
 .search-bar-input {
+    font-family: 'Roboto', sans-serif;
     color: white;
     width: 500px;
     background-color: #121212;
@@ -136,6 +137,7 @@ body {
 }
 
 .youtube-icon span {
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 
@@ -146,6 +148,7 @@ body {
 }
 
 .account-features span {
+    font-family: 'Roboto', sans-serif;
     color: white;
 }
 
@@ -162,6 +165,7 @@ body {
 }
 
 .create-feature span {
+    font-family: 'Roboto', sans-serif;
     margin-left: 5px;
 }
 
@@ -189,13 +193,13 @@ body {
 
 .topic-suggestions {
     position: relative;
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-overflow: hidden;
-grid-column: span 4 / span 4;
-grid-column-start: 2;
-grid-row-start: 2;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    overflow: hidden;
+    grid-column: span 4 / span 4;
+    grid-column-start: 2;
+    grid-row-start: 2;
 }
 
 .topics {
@@ -261,23 +265,27 @@ grid-row-start: 2;
 .video-thumbnail img {
     border: 1px solid var(--background-color);
     border-radius: 10px;
+    width: 500px;
+    height: 330px;
 }
 
 .video-title img {
     border: 1px solid var(--background-color);
     border-radius: 10px;
-    height: 20px;
-    width: 20px;
+    height: 25px;
+    width: 25px;
     margin-right: 5px;
 }
 
 .video-title {
+    font-family: 'Roboto', sans-serif;
     display: flex;
     flex-direction: row;
     color: white;
 }
 
 .creator-names {
+    font-family: 'Roboto', sans-serif;
     color: grey;
 }
 
@@ -287,11 +295,13 @@ grid-row-start: 2;
 }
 
 .views {
+    font-family: 'Roboto', sans-serif;
     color: grey;
     margin-right: 5px;
 }
 
 .date-of-time {
+    font-family: 'Roboto', sans-serif;
     color: grey;
     margin-left: 5px;
 }
@@ -308,15 +318,12 @@ grid-row-start: 2;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     width: auto;
-    gap: 8px;
+    gap:10px
 }
-    
 
-
-
-
-
-
-
-
-        
+.video{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    height: 400px;
+}
