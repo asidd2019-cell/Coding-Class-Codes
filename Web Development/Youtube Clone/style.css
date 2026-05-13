@@ -36,10 +36,19 @@
 }
 
 li {
-    margin-bottom: 40px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
 }
 
 ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     list-style-type: none;
     padding: 0px;
     margin: 0px;
@@ -47,7 +56,10 @@ ul {
 
 .nav-column-organizer{
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    width: auto;
 }
 
 .nav-bar i {
@@ -124,13 +136,8 @@ body {
     align-items: center;
     height: 30px;
     width: 30px;
-    padding-top: 2px;
-    padding-bottom: 5px;
-    padding-left: 5px;
-    padding-right: 5px;
-    border: 1px solid var(--background-color);;
+    padding: 5px;
     border-radius: 100%;
-    background-color: var(--icon-background-color);
     margin-left: 10px;
 }
 
@@ -165,7 +172,6 @@ body {
     height: 30px;
     width: 80px;
     border: 1px solid var(--background-color);
-    background-color: var(--icon-background-color);
     padding: 5px;
     border-radius: 25px;
 }
@@ -183,8 +189,6 @@ body {
     align-items: center;
     height: 30px;
     width: 30px;
-    border: 1px solid var(--background-color);
-    background-color: var(--icon-background-color);
     padding: 5px;
     border-radius: 25px;
 }
@@ -347,7 +351,6 @@ body {
     row-gap: 30px;
 }
 
-
 .video{
     display: flex;
     flex-direction: column;
@@ -365,6 +368,7 @@ body {
 .video-parent {
     display: flex;
     flex-direction: column;
+    align-items: center;
     row-gap: 1px;
     column-gap: 10px;
 }
@@ -375,4 +379,8 @@ body {
 
 .bg-color-hover:hover {
     background-color: red;
+}
+
+.nav-column-span {
+    color: white;
 }
