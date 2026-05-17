@@ -1,17 +1,25 @@
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet" href="styles.css">
 <head>
     <style>
 
     </style>
 </head>
 <body>
-    <h1>
-        Counter Project
-    </h1>
+    <div class="counter-project">
+        <div class="counter-parent">
+        <h1>Counter Project</h1>
 
-    <button>-</button>
-    <input type="text" disabled>
-    <button>+</button>
+        <input type="text" id="count" disabled>
+
+        <div class="buttons-parent">
+            <button id="decreaseButton">Decrease</button>
+            <button id="resetButton">Reset</button>
+            <button onclick "increase()" id="increaseButton">Increase</button>
+        </div>
+    </div>
+    </div>
+<script src="script.js"></script>
 </body>
 </html>
