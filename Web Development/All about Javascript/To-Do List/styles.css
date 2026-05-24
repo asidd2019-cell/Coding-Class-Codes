@@ -10,6 +10,20 @@
 .input-fields {
     display: flex;
     flex-direction: row;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    border: 1px solid grey;
+    border-radius: 5px;
 }
 
 .add-task {
@@ -17,6 +31,15 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+}
+
+.add-task button {
+    border: 1px solid snow;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(11, 59, 192);
+    width: 75px;
 }
 
 table {
