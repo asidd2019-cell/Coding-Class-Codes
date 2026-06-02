@@ -1,5 +1,5 @@
+onPageLoad()
 var tasks = []
-
 const form = document.getElementById("form")
 
 form.addEventListener("submit",function (e){
@@ -18,8 +18,16 @@ form.addEventListener("submit",function (e){
             "endDate":endDate
         }
     )
+    localStorage.setItem("tasks",JSON.stringify(tasks))
     addTask(name,description,stDate,endDate)
 })
+
+function onPageLoad(){
+    tasks = JSON.parse(localStorage.getItem("tasks"))
+    for(const task of tasks){
+        addTask(task.name,task.description,task.stDate,task.endDate)
+    }
+}
 
 function addTask(name,description,stDate,endDate){
     console.log("sdffgwgdbhbgh")

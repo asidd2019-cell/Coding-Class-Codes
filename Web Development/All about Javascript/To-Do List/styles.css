@@ -42,11 +42,14 @@ input {
     width: 75px;
 }
 
-table {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+table, th, td, tr {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    padding: 5px;
+    text-align: center;
 }
 
 th {
