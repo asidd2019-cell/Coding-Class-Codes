@@ -37,6 +37,8 @@ function addTask(name,description,stDate,endDate){
     <td>${description}</td>
     <td>${stDate}</td>
     <td>${endDate}</td>
+    <td><button class="update-button">Update</button></td>
+    <td><button class="delete-button">Delete</button></td>
     `
 
     const table = document.getElementById("table")

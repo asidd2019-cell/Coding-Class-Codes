@@ -23,7 +23,9 @@
 
 input {
     border: 1px solid grey;
-    border-radius: 5px;
+    border-radius: 3px;
+    outline: none;
+    padding: 5px;
 }
 
 .add-task {
@@ -40,11 +42,49 @@ input {
     color: white;
     background-color: rgb(11, 59, 192);
     width: 75px;
+    margin-bottom: 10px;
+}
+.update-button {
+    border: 1px solid snow;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    background-color: rgb(240, 248, 130);
+    width: 75px;
+    margin-bottom: 10px;
 }
 
-table, th, td, tr {
+.delete-button {
+    border: 1px solid snow;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(221, 25, 25);
+    width: 75px;
+    margin-bottom: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr {
+    border-top: 1px solid rgb(182, 182, 182);
+    border-bottom: 1px solid rgb(182, 182, 182);
+}
+
+/* th, td {
     border: 1px solid black;
     border-collapse: collapse;
+} */
+
+tbody tr:nth-child(even) {
+  background-color: rgb(233, 231, 231);
 }
 
 td {
@@ -53,5 +93,5 @@ td {
 }
 
 th {
-    padding: 25px;
+    padding: 10px;
 }
