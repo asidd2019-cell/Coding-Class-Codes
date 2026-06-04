@@ -1,5 +1,6 @@
 onPageLoad()
 var tasks = []
+var current_task_id = 1
 const form = document.getElementById("form")
 
 form.addEventListener("submit",function (e){
@@ -10,8 +11,11 @@ form.addEventListener("submit",function (e){
     const stDate = document.getElementById("StartofTask").value
     const endDate = document.getElementById("EndofTask").value
 
+    const id = getNewId()
+
     tasks.push (
         {
+            "id":id,
             "name":name,
             "description":description,
             "startDate":stDate,
@@ -19,8 +23,14 @@ form.addEventListener("submit",function (e){
         }
     )
     localStorage.setItem("tasks",JSON.stringify(tasks))
-    addTask(name,description,stDate,endDate)
+    addTask(id,name,description,stDate,endDate)
 })
+
+function getNewId(){
+    newId = current_task_id + 1
+    current_task_id = newId
+    return newId
+}
 
 function onPageLoad(){
     tasks = JSON.parse(localStorage.getItem("tasks"))
@@ -29,9 +39,10 @@ function onPageLoad(){
     }
 }
 
-function addTask(name,description,stDate,endDate){
+function addTask(id,name,description,stDate,endDate){
     console.log("sdffgwgdbhbgh")
     const tr = document.createElement("tr")
+    tr.id = id
     tr.innerHTML = `
     <td>${name}</td>
     <td>${description}</td>
