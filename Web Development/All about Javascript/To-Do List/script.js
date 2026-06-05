@@ -52,6 +52,17 @@ function addTask(id,name,description,stDate,endDate){
     <td><button class="delete-button">Delete</button></td>
     `
 
+      const deleteButton = tr.querySelector(".delete-button");
+
+    deleteButton.addEventListener("click", function () {
+
+        tasks = tasks.filter(task => task.id !== id);
+        
+        localStorage.setItem("tasks", JSON.stringify(tasks));
+
+        tr.remove();
+    });
+
     const table = document.getElementById("table")
 
     table.appendChild(tr)
