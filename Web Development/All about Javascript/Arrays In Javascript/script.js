@@ -95,12 +95,12 @@ Loop over the entire list by skip count 2
 // let new_list = students.filter(x => x.score >= 50)
 // console.log(new_list)
 
-const items = [
-  { name: "Laptop", available: true },
-  { name: "Mouse", available: false },
-  { name: "Keyboard", available: true },
-  { name: "Monitor", available: false }
-];
+// const items = [
+//   { name: "Laptop", available: true },
+//   { name: "Mouse", available: false },
+//   { name: "Keyboard", available: true },
+//   { name: "Monitor", available: false }
+// ];
 
-let new_list = items.filter(x => x.available == true)
-console.log(new_list)
+// let new_list = items.filter(x => x.available == true)
+// console.log(new_list)
