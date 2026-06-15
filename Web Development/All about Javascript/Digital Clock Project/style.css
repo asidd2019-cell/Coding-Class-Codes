@@ -1,5 +1,6 @@
 body {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
@@ -51,4 +52,14 @@ body {
 .am-pm {
     position: absolute;
     top: -45px;
+}
+
+button {
+    height: 40px;
+    width: 80px;
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px;
+    background-color: rgba(246, 255, 203, 0.801);
+    margin-top: 20px;
+    padding: 10px;
 }
