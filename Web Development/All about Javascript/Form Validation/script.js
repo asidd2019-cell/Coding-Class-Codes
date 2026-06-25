@@ -14,10 +14,13 @@ let emailValid = false
 function updateButton(){
     if (nameValid && passwordValid && emailValid) {
         submitButton.disabled = false
-        // submitButton.style.backgroundColor = '#094eed'
+        submitButton.style.backgroundColor = '#094eed'
+        submitButton.style.color = 'white'
     }
     else{
         submitButton.disabled = true
+        submitButton.style.backgroundColor = 'grey'
+        submitButton.style.color = 'lightgrey'
     }
 }
 
@@ -50,19 +53,19 @@ nameInput.addEventListener('input', function (){
 
 function passwordValidator(str){
     if (str.length === 0) {
-        let passwordValid = false
+        passwordValid = false
         updateButton()
         passwordValidationSpan.innerHTML = "Password cannot be empty"
         return
     }
 
     if (str.length < 8) {
-        let passwordValid = false
+        passwordValid = false
         updateButton()
         passwordValidationSpan.innerHTML = "Password is too short (8 characters minimum)"
         return
     }
-    let passwordValid = true
+    passwordValid = true
     updateButton()
     passwordValidationSpan.innerHTML = ""
 }
@@ -73,19 +76,19 @@ passwordInput.addEventListener('input', function (){
 
 function emailValidator(str){
     if (str.length === 0) {
-        let passwordValid = false
+        emailValid = false
         updateButton()
         emailValidationSpan.innerHTML = "Email cannot be empty"
         return
     }
 
     if (!regex.test(str)) {
-        let passwordValid = false
+        emailValid = false
         updateButton()
         emailValidationSpan.innerHTML = "Enter a valid email"
         return
     }
-    let passwordValid = true
+    emailValid = true
     updateButton()
     emailValidationSpan.innerHTML = ""
 }
