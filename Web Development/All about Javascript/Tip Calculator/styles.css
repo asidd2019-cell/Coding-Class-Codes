@@ -4,13 +4,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgb(229, 239, 252);
 }
 
 .tip-calculator {
     height: 300px;
     width: 350px; 
-    border: 1px solid black;
-    border-radius: 3px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    background-color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -41,12 +43,16 @@ body {
 }
 
 span {
-    width: 25px;
+    width: 50px;
 }
 
 button {
     text-align: center;
     height: 40px;
-    width: 100px;
+    width: 300px;
     padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: rgb(32, 89, 248);
 }

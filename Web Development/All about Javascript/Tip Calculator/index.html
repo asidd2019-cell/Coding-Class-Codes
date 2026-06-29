@@ -6,22 +6,22 @@
 <body>
     <div class="tip-calculator">
         <div class="bill">
-            <label for="bill">Bill Amount</label>
+            <label for="bill">Bill Amount ($)</label>
             <input type="number" id="bill">
         </div>
 
         <select name="Tip_Percentage" id="percentage_options" class="tip-percentages">
             <option value="" disabled selected hidden>Select a Percentage</option>
-            <option value="" id="option">5%</option>
-            <option value="" id="option">10%</option>
-            <option value="" id="option">15%</option>
-            <option value="" id="option">20%</option>
-            <option value="" id="option">25%</option>
+            <option value="5" id="option">5%</option>
+            <option value="10" id="option">10%</option>
+            <option value="15" id="option">15%</option>
+            <option value="20" id="option">20%</option>
+            <option value="25" id="option">25%</option>
         </select>
 
-        <span>$$$</span>
+        <span id="calculated_tip">$$$</span>
 
-        <button>Calculate</button>
+        <button id="calculate_btn">Calculate</button>
     </div>
 </body>
 <script src="script.js"></script>
