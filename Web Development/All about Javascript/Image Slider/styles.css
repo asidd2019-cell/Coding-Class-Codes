@@ -84,6 +84,14 @@ body {
     transition: background 0.2s, transform 0.2s;
 }
 
+.nav:hover {
+    background: rgba(255, 255, 255, 0.93);
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.864);
+}
+
 .prev {
     left: 16px;
 }
