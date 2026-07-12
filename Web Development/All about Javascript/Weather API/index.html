@@ -18,12 +18,13 @@
         </select>
         <button id="button">Find Weather</button>
 
-        <span class="cityname" id="cityName">a</span>
+        <div class="values" id="values">
+            <span class="cityname" id="cityName"></span>
 
         <div class="info">
             <span id="statistic_title">Temperature</span>
             <div class="info-spans">
-                <span class="temp-and-wind" id="temp_cels_number">aaa</span>
+                <span class="temp-and-wind" id="temp_cels_number"></span>
                 <span class="statistic" id="statistic_temp_cels">°C</span>
             </div>
         </div>
@@ -33,7 +34,27 @@
         <div class="info">
              <span id="statistic_title">Temperature</span>
              <div class="info-spans">
-                <span class="temp-and-wind" id="temp_fahr_number">aaa</span>
+                <span class="temp-and-wind" id="temp_fahr_number"></span>
+                <span class="statistic" id="statistic_temp_fahr">°F</span>
+             </div>
+        </div>
+
+        <hr style="border-top: 2px dotted rgba(204, 204, 204, 0.753); border-bottom: none;" class="line">
+
+        <div class="info">
+             <span id="statistic_title">Feels Like in Celsius</span>
+             <div class="info-spans">
+                <span class="temp-and-wind" id="temp_feels_like_cels_number"></span>
+                <span class="statistic" id="statistic_temp_cels">°C</span>
+             </div>
+        </div>
+
+        <hr style="border-top: 2px dotted rgba(204, 204, 204, 0.753); border-bottom: none;" class="line">
+
+        <div class="info">
+             <span id="statistic_title">Feels Like in Fahrenheit</span>
+             <div class="info-spans">
+                <span class="temp-and-wind" id="temp_feels_like_fahr_number"></span>
                 <span class="statistic" id="statistic_temp_fahr">°F</span>
              </div>
         </div>
@@ -43,10 +64,13 @@
         <div class="info">
             <span id="statistic_title">Wind Speed</span>
             <div class="info-spans">
-                <span class="temp-and-wind" id="wind_speed_number">aaa</span>
+                <span class="temp-and-wind" id="wind_speed_number"></span>
                 <span class="statistic" id="statistic_wind_speed">kph</span>
             </div>
         </div>
+        </div>
+
+        
     </div>
 </body>
 <script src="script.js"></script>

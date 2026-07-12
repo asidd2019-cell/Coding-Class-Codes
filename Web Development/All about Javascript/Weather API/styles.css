@@ -11,7 +11,7 @@ body {
 .weather-card {
     border-radius: 10px;
     padding: 40px;
-    height: 500px;
+    min-height: 250px;
     width: 500px;
     background-color: #ecf1f8 ;
     display: flex;
@@ -53,7 +53,7 @@ button {
 
 #statistic_title {
     height: 20px;
-    width: 100px;
+    width: fit-content;
     color: #6b7a8c;
     margin: 5px;
 }
@@ -61,7 +61,7 @@ button {
 .cityname {
     color: #24303f;
     font-size: 30px;
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .line {
@@ -81,4 +81,8 @@ button {
 
 .statistic {
     color: #6b7a8c;
+}
+
+.values {
+    display: none;
 }
