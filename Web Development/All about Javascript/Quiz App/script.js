@@ -4,7 +4,7 @@ const option2Span = document.getElementById('op2')
 const option3Span = document.getElementById('op3')
 const option4Span = document.getElementById('op4')
 
-
+let currentQuestion = 0
 const questions = [
     {
         question: "Which language runs in a web browser",
@@ -42,3 +42,21 @@ const questions = [
         answer: 2
       }
 ]
+
+function showQuestion (){
+  const questionObject = questions[currentQuestion]
+
+  questionSpan.innerHTML = questionObject.question
+
+  op1 = questionObject.options[0]
+  op2 = questionObject.options[1]
+  op3 = questionObject.options[2]
+  op4 = questionObject.options[3] 
+
+  option1Span.innerHTML = op1
+  option2Span.innerHTML = op2
+  option3Span.innerHTML = op3
+  option4Span.innerHTML = op4
+}
+
+showQuestion()
