@@ -3,8 +3,15 @@ const option1Span = document.getElementById('op1')
 const option2Span = document.getElementById('op2')
 const option3Span = document.getElementById('op3')
 const option4Span = document.getElementById('op4')
+const nextBtn = document.getElementById('btn')
+const numberOfQuestions = document.getElementById('numberOfQuestions')
+const quizDiv = document.getElementById('quiz')
+const resultDiv = document.getElementById('results')
 
 let currentQuestion = 0
+let userAnswers = []
+let selectedOption = null
+
 const questions = [
     {
         question: "Which language runs in a web browser",
@@ -43,8 +50,16 @@ const questions = [
       }
 ]
 
+function removeSelection(){
+  option1Span.classList.remove("select-option")
+  option2Span.classList.remove("select-option")
+  option3Span.classList.remove("select-option")
+  option4Span.classList.remove("select-option")
+}
+
 function showQuestion (){
   const questionObject = questions[currentQuestion]
+  numberOfQuestions.innerHTML = `Question ${currentQuestion+1}/5`
 
   questionSpan.innerHTML = questionObject.question
 
@@ -57,6 +72,48 @@ function showQuestion (){
   option2Span.innerHTML = op2
   option3Span.innerHTML = op3
   option4Span.innerHTML = op4
+
+  option1Span.addEventListener('click', function (){
+    selectedOption = 0
+    removeSelection()
+    option1Span.classList.add("select-option")
+  })
+  option2Span.addEventListener('click', function (){
+    selectedOption = 1
+    removeSelection()
+    option2Span.classList.add("select-option")
+  })
+  option3Span.addEventListener('click', function (){
+    selectedOption = 2
+    removeSelection()
+    option3Span.classList.add("select-option")
+  })
+  option4Span.addEventListener('click', function (){
+    selectedOption = 3
+    removeSelection()
+    option4Span.classList.add("select-option")
+  })
+
+  if (currentQuestion == 4){
+    nextBtn.innerHTML = "Finish"
+  }
 }
+
+nextBtn.addEventListener('click',function(){
+  if (selectedOption == null)
+    return
+
+  if (currentQuestion == 4){
+    quizDiv.style.display = "none"
+    resultDiv.style.display = "flex"
+  }
+
+  userAnswers.push(selectedOption)
+  selectedOption = null
+
+  currentQuestion = currentQuestion + 1
+  removeSelection()
+  showQuestion()
+})
 
 showQuestion()
