@@ -99,6 +99,31 @@ function showQuestion (){
   }
 }
 
+function showResult(){
+  let score = 0
+  for(let i=0;i<=4;i++){
+
+    const questionResultDiv = document.createElement("div")
+
+    const questionStatusDiv = document.createElement("div")
+    questionStatusDiv.classList.add("question-status")
+
+    questionResultDiv.appendChild(questionStatusDiv)
+
+    const questionNumberAndQuestionDiv = document.createElement("div")
+    questionNumberAndQuestionDiv.classList.add("question-number-and-question")
+
+    questionStatusDiv.appendChild(questionNumberAndQuestionDiv)
+
+    const questionNumber = document.createElement("span")
+    questionNumber.innerHTML = `Q${i+1}`
+    questionNumber.classList.add("question-number")
+
+    const resultQuestionTopic = document.createElement("span")
+    resultQuestionTopic.innerHTML = questions[i].question
+    resultQuestionTopic.classList.add("result-question-topic")
+}
+
 nextBtn.addEventListener('click',function(){
   if (selectedOption == null)
     return
