@@ -110,7 +110,19 @@ body {
     border-radius: 5px;
 }
 
-.question-result {
+.question-result-correct {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #48d45d;
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: rgb(235, 250, 240);
+    height: 75px;
+    width: 450px
+}
+
+.question-result-incorrect {
     display: flex;
     flex-direction: column;
     border: 1px solid #f39090;

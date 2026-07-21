@@ -3,10 +3,13 @@ const option1Span = document.getElementById('op1')
 const option2Span = document.getElementById('op2')
 const option3Span = document.getElementById('op3')
 const option4Span = document.getElementById('op4')
+const scoreSpan = document.getElementById("score")
 const nextBtn = document.getElementById('btn')
 const numberOfQuestions = document.getElementById('numberOfQuestions')
 const quizDiv = document.getElementById('quiz')
 const resultDiv = document.getElementById('results')
+const questionsResultsParent = document.getElementById("questionResultsParent")
+const restartBtn = document.getElementById("restartBtn")
 
 let currentQuestion = 0
 let userAnswers = []
@@ -122,15 +125,44 @@ function showResult(){
     const resultQuestionTopic = document.createElement("span")
     resultQuestionTopic.innerHTML = questions[i].question
     resultQuestionTopic.classList.add("result-question-topic")
-}
+
+    questionNumberAndQuestionDiv.appendChild(questionNumber)
+    questionNumberAndQuestionDiv.appendChild(resultQuestionTopic)
+
+    const myAnswer = document.createElement("span")
+    myAnswer.innerHTML = `Your Answer: ${questions[i].options[userAnswers[i]]}`
+    myAnswer.classList.add("my-answer")
+
+    const correctAnswer = document.createElement("span")
+    correctAnswer.innerHTML = `Correct Answer: ${questions[i].options[questions[i].answer]}`
+    correctAnswer.classList.add("correct-answer")
+
+    questionStatusDiv.appendChild(myAnswer)
+    questionStatusDiv.appendChild(correctAnswer)
+
+    questionsResultsParent.appendChild(questionResultDiv)
+
+    if (questions[i].answer == userAnswers[i]){
+      score = score + 1
+      questionResultDiv.classList.add("question-result-correct")
+
+    }
+    else{
+      questionResultDiv.classList.add("question-result-incorrect")
+    }
+    scoreSpan.innerHTML = `Your Score: ${score}/5`
+}}
 
 nextBtn.addEventListener('click',function(){
   if (selectedOption == null)
     return
 
   if (currentQuestion == 4){
+    userAnswers.push(selectedOption)
     quizDiv.style.display = "none"
     resultDiv.style.display = "flex"
+    showResult()
+    return
   }
 
   userAnswers.push(selectedOption)
@@ -138,6 +170,18 @@ nextBtn.addEventListener('click',function(){
 
   currentQuestion = currentQuestion + 1
   removeSelection()
+  showQuestion()
+})
+
+restartBtn.addEventListener('click', function(){
+  questionsResultsParent.replaceChildren();
+  currentQuestion = 0
+  userAnswers = []
+  selectedOption = null
+  removeSelection()
+  quizDiv.style.display = "flex"
+  resultDiv.style.display = "none"
+  // reset timer
   showQuestion()
 })
 
