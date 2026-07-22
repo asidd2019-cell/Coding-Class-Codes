@@ -10,10 +10,13 @@ const quizDiv = document.getElementById('quiz')
 const resultDiv = document.getElementById('results')
 const questionsResultsParent = document.getElementById("questionResultsParent")
 const restartBtn = document.getElementById("restartBtn")
+const timerLimit = document.getElementById("time")
 
 let currentQuestion = 0
 let userAnswers = []
 let selectedOption = null
+let count = 0
+let timeLeft = 15;
 
 const questions = [
     {
@@ -53,6 +56,35 @@ const questions = [
       }
 ]
 
+let timerLoop;
+
+// 2. The main "Start" function
+function startTimer() {
+  // Clear any existing timer so they don't stack up if clicked twice
+  clearInterval(timerLoop);
+  
+  // Step 2: Show the number "15" on the screen immediately
+  document.getElementById("time").textContent = timeLeft;
+  timerLimit.innerHTML = `Time:${timeLeft} seconds`
+
+  // Step 3: Start a 1-second loop
+  timerLoop = setInterval(() => {
+    // Step 4: Minus one second from the clock
+    timeLeft--;
+
+    // Step 4: Change the screen to show the new number
+    timerLimit.innerHTML = `Time:${timeLeft} seconds`
+
+    // Step 5: Check if it hit zero
+    if (timeLeft <= 0) {
+      clearInterval(timerLoop); // Stop the loop from running forever
+      quizDiv.style.display = "none"
+      resultDiv.style.display = "flex"
+      showResult()
+    }
+  }, 1000); // 1000 milliseconds = 1 second
+}
+
 function removeSelection(){
   option1Span.classList.remove("select-option")
   option2Span.classList.remove("select-option")
@@ -61,6 +93,7 @@ function removeSelection(){
 }
 
 function showQuestion (){
+  startTimer()
   const questionObject = questions[currentQuestion]
   numberOfQuestions.innerHTML = `Question ${currentQuestion+1}/5`
 
