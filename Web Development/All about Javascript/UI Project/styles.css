@@ -1,0 +1,105 @@
+body {
+    height: 100vh;
+    width: 100w;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-parent {
+    height: 600px;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(41, 40, 40);
+    color: white;
+    border: 1px solid #00ff88;
+    border-radius: 10px;
+    box-shadow:
+    0 0 10px #00ff88,
+    0 0 30px #00ff88,
+    0 0 60px rgba(0,255,136,.8),
+    0 0 100px rgba(0,255,136,.5);
+}
+
+.title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+    margin-bottom: 30px;
+}
+
+.heading1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    width: 200px;
+    /* background-color: white; */
+    color: #00ff88;
+    font-weight: 1000;
+    font-size: 50px;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 480px;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(41, 40, 40);
+    border: 2px solid white;
+    color: white;
+    padding: 15px;
+    padding-left: 15px;
+    font-size: 18px;
+}
+
+button {
+    height: 60px;
+    width: 515px;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 2px solid #00ff88bd;
+    background-color: rgb(41, 40, 40);
+    color: #00ff88;
+    font-size: 20px;
+}
+
+button:hover {
+    background-color: #00ff88bd;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.account-troubles {
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.forgot-password {
+    color: grey;
+}
+
+.sign-up {
+    color: #00ff88;
+    font-weight: 1000;
+    font-size: 17px;
+}
