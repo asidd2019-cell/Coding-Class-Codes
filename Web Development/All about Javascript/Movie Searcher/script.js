@@ -1,8 +1,8 @@
 const search = document.getElementById("search")
 const searchBtn = document.getElementById("searchBtn")
 const movieImg = document.getElementById("movieImage")
-const movieTitle = document.getElementById("movieTitle")
-const releaseDate = document.getElementById("releaseDate")
+// const movieTitle = document.getElementById("movieTitle")
+// const releaseDate = document.getElementById("releaseDate")
 const searchedMoviesDiv = document.getElementById("searched_movies")
 
 
@@ -60,7 +60,7 @@ async function searchMovie(){
         searchedMoviesDiv.appendChild(movieInfoDiv)
     }
 
-    movieTitle.innerHTML = `Title: ${title}`
-    releaseDate.innerHTML = `Release Date: ${release}`
-    movieImg.setAttribute("src",img)
+    // movieTitle.innerHTML = `Title: ${title}`
+    // releaseDate.innerHTML = `Release Date: ${release}`
+    // movieImg.setAttribute("src",img)
 }
