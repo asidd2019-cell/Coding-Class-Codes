@@ -2,6 +2,7 @@ const textArea = document.getElementById("textarea")
 const addButton = document.getElementById("add_button")
 const notes = document.getElementById("notes")
 
+let notesIds = 1
 addButton.addEventListener("click", ()=> {
     let notesText = textArea.value 
     if (notesText.trim() == ""){
@@ -10,6 +11,9 @@ addButton.addEventListener("click", ()=> {
     }
     let noteDiv = document.createElement('div')
     noteDiv.classList.add('note')
+
+    noteDiv.setAttribute('id',notesIds)
+    notesIds++
 
     let noteDetailsDiv = document.createElement('div')
     noteDetailsDiv.classList.add('note-details')
@@ -21,11 +25,19 @@ addButton.addEventListener("click", ()=> {
 
     let editButton = document.createElement('button')
     editButton.classList.add('edit-button')
-     editButton.innerHTML = 'Edit'
+    editButton.innerHTML = 'Edit'
+
+    editButton.addEventListener("click", ()=> {
+        
+    })
 
     let deleteButton = document.createElement('button')
     deleteButton.classList.add('delete-button')
-     deleteButton.innerHTML = 'Delete'
+    deleteButton.innerHTML = 'Delete'
+
+    deleteButton.addEventListener("click", ()=> {
+        noteDiv.remove()
+    })
 
     customizeButtonsDiv.appendChild(editButton)
     customizeButtonsDiv.appendChild(deleteButton)
@@ -37,4 +49,6 @@ addButton.addEventListener("click", ()=> {
 
     textArea.value = ''
 })
+
+
 

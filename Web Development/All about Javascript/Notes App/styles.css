@@ -5,6 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .app {
@@ -39,7 +40,7 @@ body {
     gap: 10px;
 }
 
-textarea {
+#textarea {
     background-color: rgb(68, 68, 68);
     color: white;
     border: none;
@@ -104,4 +105,20 @@ button {
 
 .edit-button {
     background-color: rgb(111, 224, 111);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: red;
+    position: absolute;
+}
+
+#editNote {
+    height: 200px;
+    width: 595px;
 }
