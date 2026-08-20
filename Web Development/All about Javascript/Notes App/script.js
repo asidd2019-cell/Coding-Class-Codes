@@ -2,65 +2,83 @@ const textArea = document.getElementById("textarea")
 const addButton = document.getElementById("add_button")
 const notes = document.getElementById("notes")
 const body = document.getElementById("body")
-// const modal = document.getElementById('modal')
-// modal.close ()
 
+const allNotes = []
 let notesIds = 1
-addButton.addEventListener("click", ()=> {
-    let notesText = textArea.value 
-    if (notesText.trim() == ""){
-        alert ("Write something to add a note.")
+
+addButton.addEventListener("click", () => {
+
+    let notesText = textArea.value
+
+    if (notesText.trim() == "") {
+        alert("Write something to add a note.")
         return
     }
-    let noteDiv = document.createElement('div')
-    noteDiv.classList.add('note')
 
-    noteDiv.setAttribute('id',notesIds)
+    // Add the actual note text to the array
+    allNotes.push(notesText)
+
+    // Save notes to localStorage
+    localStorage.setItem("notes", JSON.stringify(allNotes))
+
+    let noteDiv = document.createElement("div")
+    noteDiv.classList.add("note")
+
+    noteDiv.setAttribute("id", notesIds)
     notesIds++
 
-    let noteDetailsDiv = document.createElement('div')
-    noteDetailsDiv.classList.add('note-details')
-    noteDetailsDiv.innerHTML = `${notesText}`
+    let noteDetailsDiv = document.createElement("div")
+    noteDetailsDiv.classList.add("note-details")
+    noteDetailsDiv.innerHTML = notesText
     noteDetailsDiv.style.whiteSpace = "pre-wrap"
 
-    let customizeButtonsDiv = document.createElement('div')
-    customizeButtonsDiv.classList.add('customize-buttons')
+    let customizeButtonsDiv = document.createElement("div")
+    customizeButtonsDiv.classList.add("customize-buttons")
 
-    let editButton = document.createElement('button')
-    editButton.classList.add('edit-button')
-    editButton.innerHTML = 'Edit'
+    let editButton = document.createElement("button")
+    editButton.classList.add("edit-button")
+    editButton.innerHTML = "Edit"
 
-    editButton.addEventListener("click", ()=> {
-        // modal.style.display = 'flex'
-        // modal.showModal()
+    editButton.addEventListener("click", () => {
 
-        let modalDialog = document.createElement('dialog')
-        modalDialog.classList.add('modal')
+        let modalDialog = document.createElement("dialog")
+        modalDialog.classList.add("modal")
 
-        let editNote = document.createElement('textarea')
-        editNote.classList.add('edit-note')
-        editNote.setAttribute('placeholder', "Type your note here")
+        let editNote = document.createElement("textarea")
+        editNote.classList.add("edit-note")
+        editNote.setAttribute("placeholder", "Type your note here")
 
-        let saveButtonDiv = document.createElement('div')
-        saveButtonDiv.classList.add('save-button-div')
+        let saveButtonDiv = document.createElement("div")
+        saveButtonDiv.classList.add("save-button-div")
 
-        let saveButton = document.createElement('button')
-        saveButton.classList.add('save-button')
-        saveButton.innerHTML = 'Save'
+        let saveButton = document.createElement("button")
+        saveButton.classList.add("save-button")
+        saveButton.innerHTML = "Save"
+
+        saveButton.addEventListener("click", () => {
+
+            noteDetailsDiv.innerHTML = editNote.value
+            noteDetailsDiv.style.whiteSpace = "pre-wrap"
+
+            modalDialog.style.display = "none"
+            modalDialog.close()
+        })
 
         modalDialog.appendChild(editNote)
         modalDialog.appendChild(saveButtonDiv)
         saveButtonDiv.appendChild(saveButton)
+
         body.appendChild(modalDialog)
-        modalDialog.style.display = 'flex'
+
+        modalDialog.style.display = "flex"
         modalDialog.showModal()
     })
 
-    let deleteButton = document.createElement('button')
-    deleteButton.classList.add('delete-button')
-    deleteButton.innerHTML = 'Delete'
+    let deleteButton = document.createElement("button")
+    deleteButton.classList.add("delete-button")
+    deleteButton.innerHTML = "Delete"
 
-    deleteButton.addEventListener("click", ()=> {
+    deleteButton.addEventListener("click", () => {
         noteDiv.remove()
     })
 
@@ -72,8 +90,5 @@ addButton.addEventListener("click", ()=> {
 
     notes.appendChild(noteDiv)
 
-    textArea.value = ''
+    textArea.value = ""
 })
-
-
-
