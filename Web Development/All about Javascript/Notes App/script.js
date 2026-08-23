@@ -3,7 +3,7 @@ const addButton = document.getElementById("add_button")
 const notes = document.getElementById("notes")
 const body = document.getElementById("body")
 
-const allNotes = []
+let allNotes = []
 let notesIds = 1
 
 addButton.addEventListener("click", () => {
@@ -62,6 +62,13 @@ addButton.addEventListener("click", () => {
 
             modalDialog.style.display = "none"
             modalDialog.close()
+
+            idx = allNotes.findIndex(n => n == notesText)
+            if (idx != -1 ) {
+                allNotes[idx] = editNote.value
+            }
+
+            localStorage.setItem("notes", JSON.stringify(allNotes))
         })
 
         modalDialog.appendChild(editNote)
@@ -80,6 +87,8 @@ addButton.addEventListener("click", () => {
 
     deleteButton.addEventListener("click", () => {
         noteDiv.remove()
+        allNotes = allNotes.filter(n => n !== notesText)
+        localStorage.setItem("notes", JSON.stringify(allNotes))
     })
 
     customizeButtonsDiv.appendChild(editButton)
