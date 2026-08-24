@@ -6,6 +6,17 @@ const body = document.getElementById("body")
 let allNotes = []
 let notesIds = 1
 
+function OnPageLoad(){
+    const arr = localStorage.getItem('notes');
+    if (arr){
+        allNotes = JSON.parse(arr)
+    }
+
+    for (i=0; i<allNotes.length; i++ ){
+        DisplayNote(allNotes[i])
+    }
+}
+
 addButton.addEventListener("click", () => {
 
     let notesText = textArea.value
@@ -18,10 +29,15 @@ addButton.addEventListener("click", () => {
     // Add the actual note text to the array
     allNotes.push(notesText)
 
+    DisplayNote(notesText)
+
     // Save notes to localStorage
     localStorage.setItem("notes", JSON.stringify(allNotes))
+    textArea.value = ""
+})
 
-    let noteDiv = document.createElement("div")
+function DisplayNote(notesText){
+        let noteDiv = document.createElement("div")
     noteDiv.classList.add("note")
 
     noteDiv.setAttribute("id", notesIds)
@@ -87,7 +103,7 @@ addButton.addEventListener("click", () => {
 
     deleteButton.addEventListener("click", () => {
         noteDiv.remove()
-        allNotes = allNotes.filter(n => n !== notesText)
+        allNotes = allNotes.filter(n => n !== noteDetailsDiv.innerHTML)
         localStorage.setItem("notes", JSON.stringify(allNotes))
     })
 
@@ -98,6 +114,5 @@ addButton.addEventListener("click", () => {
     noteDiv.appendChild(customizeButtonsDiv)
 
     notes.appendChild(noteDiv)
-
-    textArea.value = ""
-})
+}
+OnPageLoad()
