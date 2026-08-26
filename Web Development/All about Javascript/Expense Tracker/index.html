@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="expense-tracker">
+        <span class="title">Pocket Ledger</span>
+        <span class="title-description">Track your income and expenses</span>
+        
+        <div class="current-balance">
+            <span>Current Balance</span>
+            <span>$ 0.00</span>
+            <div class="money-count">
+                <div class="income">
+                    <span class="income-title">Income</span>
+                    <span class="income-amount">$ 0.00</span>
+                </div>
+
+                <div class="expense">
+                    <span class="expense-title">Expense</span>
+                    <span class="expense-amount">$ 0.00</span>
+                </div>
+            </div>
+        </div>
+
+        <form>
+            <div class="inputs">
+                <select name="Type" id="">
+                    <option value="1">Income</option>
+                    <option value="2">Expense</option>
+                </select>
+
+                <div class="description">
+                    <span class="description-input-title">Description</span>
+                    <input type="text" placeholder="e.g. Salary, Groceries">
+                </div>
+
+                <div class="Amount">
+                    <span class="amount-input-title">Amount</span>
+                    <input type="number" placeholder="0.00">
+                </div>
+
+                <button class="add-transaction">Add Transaction</button>
+            </div>
+            </form>
+
+            <div class="pages">
+                <button class="all-page">All</button>
+                <button class="income-page">Income</button>
+                <Button class="expense-page">Expense</Button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
