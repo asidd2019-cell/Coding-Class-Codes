@@ -10,7 +10,6 @@ body {
 .expense-tracker {
     height: 750px;
     width: 500px;
-    border: 1px solid black;
     padding: 20px;
     gap: 10px;
     display: flex;
@@ -18,12 +17,16 @@ body {
 }
 
 .title {
-    font-size: 30px;
-    font-weight: 50px;
+    font-family: "Inter", sans-serif;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .title-description {
+    font-family: "Inter", sans-serif;
     font-size: 15px;
+    font-weight: 400;
+    color: rgb(145, 144, 144);
 }
 
 .current-balance {
@@ -35,6 +38,16 @@ body {
     background-color: rgb(30, 32, 46);
     border-radius: 10px;
     color: white;
+    font-family: "Roboto Mono", monospace;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.current-balance-span {
+    color: rgb(218, 216, 216);
+    font-family: "Roboto Mono", monospace;
+    font-size: 21px;
+    font-weight: 500;
 }
 
 .balance-amount {
@@ -60,8 +73,17 @@ body {
     margin-bottom: 10px;
 }
 
+.income-title {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
 .income-amount {
     color: rgb(145, 238, 145);
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 .expense {
@@ -74,16 +96,32 @@ body {
     flex-direction: column;
 }
 
+.expense-title {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+
 .expense-amount {
     color: rgb(247, 152, 152);
+    font-family: "Roboto Mono", monospace;
+    font-size: 20px;
+    font-weight: 500;
 }
 
 form {
-    height: 240px;
+    height: 260px;
     width: 465px;
     background-color: white;
     padding: 20px;
     border-radius: 10px;
+}
+
+.form-title {
+    font-family: "Inter", sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
 .inputs {
@@ -99,14 +137,39 @@ form {
     gap: 5px;
 }
 
+input,select {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+input:placeholder {
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.input-title {
+    font-family: "Inter", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    padding-bottom: 5px;
+}
+
 select {
     height: 30px;
     padding: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid grey;
 }
 
 input {
     height: 20px;
     padding: 5px;
+    border-radius: 5px;
+    box-shadow: none;
+    border: 1px solid grey;
 }
 
 .add-transaction {
@@ -115,6 +178,9 @@ input {
     height: 40px;
     border: none;
     border-radius: 5px;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .pages {
@@ -135,4 +201,30 @@ input {
     border: none;
     border-radius: 7px;
     background-color: white;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.button-active {
+    height: 30px;
+    width: 155px;
+    border: none;
+    border-radius: 7px;
+    background-color: rgb(37, 39, 65) !important;
+    color: white !important;
+    font-family: "Inter", sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.transaction-info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
 }
