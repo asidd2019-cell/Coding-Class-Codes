@@ -31,7 +31,7 @@
             <div class="inputs">
                 <div class="input">
                     <span class="input-title">Type</span>
-                        <select class="input" name="Type" id="">
+                        <select class="input" name="Type" id="type">
                             <option value="1">Income</option>
                             <option value="2">Expense</option>
                         </select>
@@ -39,17 +39,17 @@
 
                 <div class="input">
                     <span class="input-title">Description</span>
-                    <input type="text" placeholder="e.g. Salary, Groceries">
+                    <input type="text" placeholder="e.g. Salary, Groceries" id="description">
                 </div>
 
                 <div class="input">
                     <span class="input-title">Amount</span>
-                    <input type="number" placeholder="0.00">
+                    <input type="number" placeholder="0.00" id="amount">
                 </div>
 
-                <button class="add-transaction">Add Transaction</button>
+                <button class="add-transaction" id="addTransaction">Add Transaction</button>
             </div>
-            </form>
+        </form>
 
             <div class="pages">
                 <button class="page button-active">All</button>
