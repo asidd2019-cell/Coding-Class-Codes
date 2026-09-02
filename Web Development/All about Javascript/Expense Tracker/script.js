@@ -11,8 +11,9 @@ addTransaction.addEventListener("click", (e) => {
     const transactionType = type.value
     const transactionDescription = description.value
     const transactionAmount = amount.value
-    if (transactionType || transactionDescription || transactionAmount) {
-        addTransaction.disabled = true
+    if (transactionType == "" || transactionDescription == "" || transactionAmount == "") {
+        alert("Fill out the inputs before adding a transaction")
+        return
     }
 
     expenses.push({
@@ -23,3 +24,6 @@ addTransaction.addEventListener("click", (e) => {
     console.log(expenses)
 })
 
+function CalculateTotalIncomeAndExpense () {
+
+}
