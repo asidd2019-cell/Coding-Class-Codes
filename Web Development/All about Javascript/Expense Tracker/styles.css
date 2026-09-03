@@ -221,10 +221,38 @@ input {
 .transaction-info {
     margin-top: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     color: grey;
     font-family: "Inter", sans-serif;
     font-size: 13px;
     font-weight: 400;
+}
+
+.transaction-info-span {
+    display: none;
+}
+
+.transaction-history {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 500px;
+}
+
+.income-transaction {
+    height: 80px;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-left: 20px solid green;
+    border-radius: 10px;
+}
+
+.expense-transaction {
+    height: 80px;
+    width: 500px;
+    background-color: rgb(255, 255, 255);
+    border-left: 20px solid rgb(197, 4, 4);
+    border-radius: 10px;
 }

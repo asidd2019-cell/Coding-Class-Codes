@@ -10,16 +10,16 @@
         
         <div class="current-balance">
             <span class="current-balance-span">Current Balance</span>
-            <span class="balance-amount">$ 0.00</span>
+            <span class="balance-amount" id="curBalSpan">$ 0.00</span>
             <div class="money-count">
                 <div class="income">
                     <span class="income-title">Income</span>
-                    <span class="income-amount">$ 0.00</span>
+                    <span class="income-amount" id="incomeSpan">$ 0.00</span>
                 </div>
 
                 <div class="expense">
                     <span class="expense-title">Expense</span>
-                    <span class="expense-amount">$ 0.00</span>
+                    <span class="expense-amount" id="expenseSpan">$ 0.00</span>
                 </div>
             </div>
         </div>
@@ -59,6 +59,15 @@
 
         <div class="transaction-info">
             <span class="transaction-info-span">No transactions yet. Add one above!</span>
+                <div class="transaction-history">
+                    <div class="income-transaction">
+                        <span></span>
+                    </div>
+
+                    <div class="expense-transaction">
+                        <span></span>
+                    </div>
+                </div>
         </div>
 
         </form>
