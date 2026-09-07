@@ -242,17 +242,61 @@ input {
 }
 
 .income-transaction {
-    height: 80px;
-    width: 500px;
+    height: 65px;
+    width: 475px;
     background-color: rgb(255, 255, 255);
     border-left: 20px solid green;
     border-radius: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    padding-left: 10px;
+    gap: 10px;
 }
 
 .expense-transaction {
-    height: 80px;
-    width: 500px;
+    height: 65px;
+    width: 475px;
     background-color: rgb(255, 255, 255);
     border-left: 20px solid rgb(197, 4, 4);
     border-radius: 10px;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.transaction-description {
+    color: black;
+    font-weight: 550;
+}
+
+.transaction-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: ;
+    gap: 7px;
+}
+
+.income-transaction-amount {
+    height: 65px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: green;
+    font-weight: 550;
+    font-size: 15px;
+}
+
+.expense-transaction-amount {
+    height: 65px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: red;
+    font-weight: 550;
+    font-size: 15px;
 }
