@@ -251,7 +251,6 @@ input {
     /* flex-direction: column; */
     justify-content: space-between;
     padding-left: 10px;
-    gap: 10px;
 }
 
 .expense-transaction {
@@ -261,42 +260,52 @@ input {
     border-left: 20px solid rgb(197, 4, 4);
     border-radius: 10px;
     display: flex;
-    /* flex-direction: column; */
     justify-content: space-between;
-    gap: 10px;
     padding-left: 10px;
 }
 
 .transaction-description {
     color: black;
     font-weight: 550;
+    width: 125px;
+    height: 20px;
 }
 
 .transaction-details {
     display: flex;
     flex-direction: column;
-    justify-content: ;
-    gap: 7px;
+    justify-content: center;
+    text-align: left;
 }
 
 .income-transaction-amount {
-    height: 65px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: green;
     font-weight: 550;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .expense-transaction-amount {
-    height: 65px;
-    width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     color: red;
     font-weight: 550;
-    font-size: 15px;
+    font-size: 20px;
+}
+
+.fa-solid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+    height: 100%;
+    width: 100px;
+    font-size: 20px;
+}
+
+.amount-and-cancel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    gap: 10px;
+    padding-right: 10px;
 }

@@ -50,7 +50,6 @@ function CalculateTotalIncomeAndExpense () {
     expenseSpan.innerHTML = "$ " + `${totalExpenseSum}`
 }
 
-// total transaction
-//convert transaction into number
-// subtract income/expense for current balance
-// get spans from html and make its numbers show
+function ShowTransaction {
+  transactionInfoSpan = document.createElement("transactionInfoSpan")  
+}
