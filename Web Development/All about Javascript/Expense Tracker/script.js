@@ -9,7 +9,7 @@ const expenses = []
 addTransaction.addEventListener("click", (e) => {
     e.preventDefault()
     const transactionType = type.value
-    const transactionDescription = description.value
+    const transactionDesc = description.value
     const transactionAmount = amount.value
     if (transactionType == "" || transactionDescription == "" || transactionAmount == "") {
         alert("Fill out the inputs before adding a transaction")
@@ -18,7 +18,7 @@ addTransaction.addEventListener("click", (e) => {
 
     expenses.push({
         "type":transactionType,
-        "description":transactionDescription,
+        "description":transactionDesc,
         "amount":transactionAmount
     })
     console.log(expenses)
@@ -51,5 +51,26 @@ function CalculateTotalIncomeAndExpense () {
 }
 
 function ShowTransaction {
-  transactionInfoSpan = document.createElement("transactionInfoSpan")  
+  transactionInfoSpan = document.createElement("transactionInfoSpan")
+
+  transactionHistory = document.createElement("transactionHistory")
+
+  incomeTransaction = document.createElement("incomeTransaction")
+  expenseTransaction = document.createElement("expenseTransaction")
+
+  incomeTransactionDetails = document.createElement("incomeTransactionDetails")
+
+  incomeTransactionDescription = document.createElement("incomeTransactionDescription")
+
+  incomeTransactionDate = document.createElement("incomeTransactionDate")
+
+  amountAndCancel = document.createElement("amountAndCancel")
+  amountAndCancel.AppendChild (incomeTransactionAmount)
+  amountAndCancel.AppendChild (incomeTransactionAmountSpan)
+
+  incomeTransactionAmount = document.createElement("incomeTransactionAmount")
+
+  incomeTransactionAmountSpan = document.createElement("incomeTransactionAmountSpan")
+
+  cancelTransaction = document.createElement("cancelTransaction")
 }
