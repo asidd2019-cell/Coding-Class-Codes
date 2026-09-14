@@ -3,6 +3,7 @@ const type = document.getElementById("type")
 const description = document.getElementById("description")
 const amount = document.getElementById("amount")
 const addTransaction = document.getElementById("addTransaction")
+const transactionHistory = document.getElementById("transactionHistory")
 
 const expenses = []
 
@@ -23,6 +24,7 @@ addTransaction.addEventListener("click", (e) => {
     })
     console.log(expenses)
     CalculateTotalIncomeAndExpense()
+    ShowTransaction(transactionAmount,transactionDesc,"2026-09-14",transactionType)
 })
 
 function CalculateTotalIncomeAndExpense () {
@@ -50,73 +52,88 @@ function CalculateTotalIncomeAndExpense () {
     expenseSpan.innerHTML = "$ " + `${totalExpenseSum}`
 }
 
-function ShowTransaction () {
-  transactionInfoSpan = document.createElement("transactionInfoSpan")
-  transactionInfoSpan.classList.add ("transaction-info-span")
+function ShowTransaction (amount,description,date,type) {
 
-  transactionHistory = document.createElement("transactionHistory")
-  transactionHistory.classList.add ("transaction-history")
+    if (type == "income") {
 
-  incomeTransaction = document.createElement("incomeTransaction")
-  incomeTransaction.classList.add ("income-transaction")
-  incomeTransaction.AppendChild (incomeTransactionDetails)
-  incomeTransaction.AppendChild (incomeTransactionDescription)
-  incomeTransaction.AppendChild (incomeTransactionDate)
-  incomeTransaction.AppendChild (incomeAmountAndCancel)
+        incomeTransaction = document.createElement("div")
+        incomeTransaction.classList.add ("income-transaction")
 
-  incomeTransactionDetails = document.createElement("incomeTransactionDetails")
-  incomeTransactionDetails.classList.add ("transaction-details")
+        incomeTransactionDetails = document.createElement("div")
+        incomeTransactionDetails.classList.add ("transaction-details")
 
-  incomeTransactionDescription = document.createElement("incomeTransactionDescription")
-  incomeTransactionDescription.classList.add ("transaction-description")
+        incomeTransactionDescription = document.createElement("span")
+        incomeTransactionDescription.classList.add ("transaction-description")
+        incomeTransactionDescription.innerHTML = description
 
-  incomeTransactionDate = document.createElement("incomeTransactionDate")
-  incomeTransactionDate.classList.add ("transaction-date")
+        incomeTransactionDate = document.createElement("span")
+        incomeTransactionDate.classList.add ("transaction-date")
+        incomeTransactionDate.innerHTML = date
 
-  incomeAmountAndCancel = document.createElement("incomeAmountAndCancel")
-  incomeAmountAndCancel.classList.add ("amount-and-cancel")
-  incomeAmountAndCancel.AppendChild (incomeTransactionAmount)
-  incomeAmountAndCancel.AppendChild (incomeTransactionAmountSpan)
+        incomeAmountAndCancel = document.createElement("div")
+        incomeAmountAndCancel.classList.add ("amount-and-cancel")
 
-  incomeTransactionAmount = document.createElement("incomeTransactionAmount")
-  incomeTransactionAmount.classList.add ("income-transaction-amount")
-  incomeTransactionAmount.AppendChild (incomeTransactionAmountSpan)
+        incomeTransactionAmount = document.createElement("div")
+        incomeTransactionAmount.classList.add ("income-transaction-amount")
+        incomeTransactionAmount.innerHTML = `+ $${amount}`
 
-  incomeTransactionAmountSpan = document.createElement("incomeTransactionAmountSpan")
+        incomeTransactionAmountSpan = document.createElement("span")
 
-  incomeCancelTransaction = document.createElement("incomeCancelTransaction")
-  incomeCancelTransaction.classList.add ("fa-solid")
-  incomeCancelTransaction.classList.add ("fa-x")
-//  _____________________________________________________________________________________________
+        incomeCancelTransaction = document.createElement("i")
+        incomeCancelTransaction.classList.add ("fa-solid")
+        incomeCancelTransaction.classList.add ("fa-x")    
 
-  expenseTransaction = document.createElement("expenseTransaction")
-  expenseTransaction.classList.add ("expense-transaction")
-  expenseTransaction.AppendChild (expenseTransactionDetails)
-  expenseTransaction.AppendChild (expenseTransactionDescription)
-  expenseTransaction.AppendChild (expenseTransactionDate)
-  expenseTransaction.AppendChild (expenseAmountAndCancel)
+        incomeTransaction.AppendChild (incomeTransactionDetails)
+        incomeTransaction.AppendChild (incomeTransactionDescription)
+        incomeTransaction.AppendChild (incomeTransactionDate)
+        incomeTransaction.AppendChild (incomeAmountAndCancel)
 
-  expenseTransactionDetails = document.createElement("expenseTransactionDetails")
-  expenseTransactionDetails.classList.add ("transaction-details")
+        incomeAmountAndCancel.AppendChild (incomeTransactionAmount)
+        incomeAmountAndCancel.AppendChild (incomeTransactionAmountSpan)
 
-  expenseTransactionDescription = document.createElement("expenseTransactionDescription")
-  expenseTransactionDescription.classList.add ("transaction-description")
+        incomeTransactionAmount.AppendChild (incomeTransactionAmountSpan)
 
-  expenseTransactionDate = document.createElement("expenseTransactionDate")
-  expenseTransactionDate.classList.add ("transaction-date")
+        transactionHistory.appendChild (incomeTransaction)
+    }
 
-  expenseAmountAndCancel = document.createElement("expenseAmountAndCancel")
-  expenseAmountAndCancel.classList.add ("amount-and-cancel")
-  expenseAmountAndCancel.AppendChild (expenseTransactionAmount)
-  expenseAmountAndCancel.AppendChild (expenseTransactionAmountSpan)
+    if (type == "expense") {
+        expenseTransaction = document.createElement("div")
+        expenseTransaction.classList.add ("expense-transaction")
 
-  expenseTransactionAmount = document.createElement("expenseTransactionAmount")
-  expenseTransactionAmount.classList.add ("expense-transaction-amount")
-  expenseTransactionAmount.AppendChild (expenseTransactionAmountSpan)
+        expenseTransactionDetails = document.createElement("div")
+        expenseTransactionDetails.classList.add ("transaction-details")
 
-  expenseTransactionAmountSpan = document.createElement("expenseTransactionAmountSpan")
+        expenseTransactionDescription = document.createElement("span")
+        expenseTransactionDescription.classList.add ("transaction-description")
+        expenseTransactionDescription.innerHTML = description
 
-  expenseCancelTransaction = document.createElement("expenseCancelTransaction")
-  expenseCancelTransaction.classList.add ("fa-solid")
-  expenseCancelTransaction.classList.add ("fa-x")
+        expenseTransactionDate = document.createElement("span")
+        expenseTransactionDate.classList.add ("transaction-date")
+        expenseTransactionDate.innerHTML = date
+
+        expenseAmountAndCancel = document.createElement("div")
+        expenseAmountAndCancel.classList.add ("amount-and-cancel")
+
+        expenseTransactionAmount = document.createElement("div")
+        expenseTransactionAmount.classList.add ("expense-transaction-amount")
+        expenseTransactionAmount.innerHTML = `+ $${amount}`
+
+        expenseTransactionAmountSpan = document.createElement("span")
+
+        expenseCancelTransaction = document.createElement("i")
+        expenseCancelTransaction.classList.add ("fa-solid")
+        expenseCancelTransaction.classList.add ("fa-x")
+
+        expenseTransaction.AppendChild (expenseTransactionDetails)
+        expenseTransaction.AppendChild (expenseTransactionDescription)
+        expenseTransaction.AppendChild (expenseTransactionDate)
+        expenseTransaction.AppendChild (expenseAmountAndCancel)
+
+        expenseAmountAndCancel.AppendChild (expenseTransactionAmount)
+        expenseAmountAndCancel.AppendChild (expenseTransactionAmountSpan)
+
+        expenseTransactionAmount.AppendChild (expenseTransactionAmountSpan)
+
+        transactionHistory.appendChild (expenseTransaction)
+    }
 }
