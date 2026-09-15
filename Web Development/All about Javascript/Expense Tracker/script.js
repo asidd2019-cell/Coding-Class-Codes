@@ -12,7 +12,7 @@ addTransaction.addEventListener("click", (e) => {
     const transactionType = type.value
     const transactionDesc = description.value
     const transactionAmount = amount.value
-    if (transactionType == "" || transactionDescription == "" || transactionAmount == "") {
+    if (transactionType == "" || transactionDesc == "" || transactionAmount == "") {
         alert("Fill out the inputs before adding a transaction")
         return
     }
@@ -83,15 +83,18 @@ function ShowTransaction (amount,description,date,type) {
         incomeCancelTransaction.classList.add ("fa-solid")
         incomeCancelTransaction.classList.add ("fa-x")    
 
-        incomeTransaction.AppendChild (incomeTransactionDetails)
-        incomeTransaction.AppendChild (incomeTransactionDescription)
-        incomeTransaction.AppendChild (incomeTransactionDate)
-        incomeTransaction.AppendChild (incomeAmountAndCancel)
+        incomeTransactionDetails.appendChild (incomeTransactionDescription)
+        incomeTransactionDetails.appendChild (incomeTransactionDate)
 
-        incomeAmountAndCancel.AppendChild (incomeTransactionAmount)
-        incomeAmountAndCancel.AppendChild (incomeTransactionAmountSpan)
+        incomeTransactionAmount.appendChild (incomeTransactionAmountSpan)
+        
+        incomeTransaction.appendChild (incomeTransactionDetails)
+        incomeTransaction.appendChild (incomeAmountAndCancel)
 
-        incomeTransactionAmount.AppendChild (incomeTransactionAmountSpan)
+        incomeAmountAndCancel.appendChild (incomeTransactionAmount)
+        incomeAmountAndCancel.appendChild (incomeCancelTransaction)
+
+        incomeTransactionAmount.appendChild (incomeTransactionAmountSpan)
 
         transactionHistory.appendChild (incomeTransaction)
     }
@@ -116,7 +119,7 @@ function ShowTransaction (amount,description,date,type) {
 
         expenseTransactionAmount = document.createElement("div")
         expenseTransactionAmount.classList.add ("expense-transaction-amount")
-        expenseTransactionAmount.innerHTML = `+ $${amount}`
+        expenseTransactionAmount.innerHTML = `- $${amount}`
 
         expenseTransactionAmountSpan = document.createElement("span")
 
@@ -124,15 +127,16 @@ function ShowTransaction (amount,description,date,type) {
         expenseCancelTransaction.classList.add ("fa-solid")
         expenseCancelTransaction.classList.add ("fa-x")
 
-        expenseTransaction.AppendChild (expenseTransactionDetails)
-        expenseTransaction.AppendChild (expenseTransactionDescription)
-        expenseTransaction.AppendChild (expenseTransactionDate)
-        expenseTransaction.AppendChild (expenseAmountAndCancel)
+        expenseTransaction.appendChild (expenseTransactionDetails)
+        expenseTransaction.appendChild (expenseAmountAndCancel)
 
-        expenseAmountAndCancel.AppendChild (expenseTransactionAmount)
-        expenseAmountAndCancel.AppendChild (expenseTransactionAmountSpan)
+        expenseAmountAndCancel.appendChild (expenseTransactionAmount)
+        expenseAmountAndCancel.appendChild (expenseCancelTransaction)
 
-        expenseTransactionAmount.AppendChild (expenseTransactionAmountSpan)
+        expenseTransactionAmount.appendChild (expenseTransactionAmountSpan)
+
+        expenseTransactionDetails.appendChild (expenseTransactionDescription)
+        expenseTransactionDetails.appendChild (expenseTransactionDate)
 
         transactionHistory.appendChild (expenseTransaction)
     }
