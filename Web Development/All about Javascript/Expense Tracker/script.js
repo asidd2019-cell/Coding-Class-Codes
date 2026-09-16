@@ -56,32 +56,36 @@ function ShowTransaction (amount,description,date,type) {
 
     if (type == "income") {
 
-        incomeTransaction = document.createElement("div")
+        const incomeTransaction = document.createElement("div")
         incomeTransaction.classList.add ("income-transaction")
 
-        incomeTransactionDetails = document.createElement("div")
+        const incomeTransactionDetails = document.createElement("div")
         incomeTransactionDetails.classList.add ("transaction-details")
 
-        incomeTransactionDescription = document.createElement("span")
+        const incomeTransactionDescription = document.createElement("span")
         incomeTransactionDescription.classList.add ("transaction-description")
         incomeTransactionDescription.innerHTML = description
 
-        incomeTransactionDate = document.createElement("span")
+        const incomeTransactionDate = document.createElement("span")
         incomeTransactionDate.classList.add ("transaction-date")
         incomeTransactionDate.innerHTML = date
 
-        incomeAmountAndCancel = document.createElement("div")
+        const incomeAmountAndCancel = document.createElement("div")
         incomeAmountAndCancel.classList.add ("amount-and-cancel")
 
-        incomeTransactionAmount = document.createElement("div")
+        const incomeTransactionAmount = document.createElement("div")
         incomeTransactionAmount.classList.add ("income-transaction-amount")
         incomeTransactionAmount.innerHTML = `+ $${amount}`
 
-        incomeTransactionAmountSpan = document.createElement("span")
+        const incomeTransactionAmountSpan = document.createElement("span")
 
-        incomeCancelTransaction = document.createElement("i")
+        const incomeCancelTransaction = document.createElement("i")
         incomeCancelTransaction.classList.add ("fa-solid")
-        incomeCancelTransaction.classList.add ("fa-x")    
+        incomeCancelTransaction.classList.add ("fa-x") 
+        
+        incomeCancelTransaction.addEventListener ("click", () => {
+            incomeTransaction.remove()
+        })
 
         incomeTransactionDetails.appendChild (incomeTransactionDescription)
         incomeTransactionDetails.appendChild (incomeTransactionDate)
@@ -100,32 +104,36 @@ function ShowTransaction (amount,description,date,type) {
     }
 
     if (type == "expense") {
-        expenseTransaction = document.createElement("div")
+        const expenseTransaction = document.createElement("div")
         expenseTransaction.classList.add ("expense-transaction")
 
-        expenseTransactionDetails = document.createElement("div")
+        const expenseTransactionDetails = document.createElement("div")
         expenseTransactionDetails.classList.add ("transaction-details")
 
-        expenseTransactionDescription = document.createElement("span")
+        const expenseTransactionDescription = document.createElement("span")
         expenseTransactionDescription.classList.add ("transaction-description")
         expenseTransactionDescription.innerHTML = description
 
-        expenseTransactionDate = document.createElement("span")
+        const expenseTransactionDate = document.createElement("span")
         expenseTransactionDate.classList.add ("transaction-date")
         expenseTransactionDate.innerHTML = date
 
-        expenseAmountAndCancel = document.createElement("div")
+        const expenseAmountAndCancel = document.createElement("div")
         expenseAmountAndCancel.classList.add ("amount-and-cancel")
 
-        expenseTransactionAmount = document.createElement("div")
+        const expenseTransactionAmount = document.createElement("div")
         expenseTransactionAmount.classList.add ("expense-transaction-amount")
         expenseTransactionAmount.innerHTML = `- $${amount}`
 
-        expenseTransactionAmountSpan = document.createElement("span")
+        const expenseTransactionAmountSpan = document.createElement("span")
 
-        expenseCancelTransaction = document.createElement("i")
+        const expenseCancelTransaction = document.createElement("i")
         expenseCancelTransaction.classList.add ("fa-solid")
         expenseCancelTransaction.classList.add ("fa-x")
+
+        expenseCancelTransaction.addEventListener ("click", () => {
+            expenseTransaction.remove()
+        })
 
         expenseTransaction.appendChild (expenseTransactionDetails)
         expenseTransaction.appendChild (expenseAmountAndCancel)
@@ -141,3 +149,4 @@ function ShowTransaction (amount,description,date,type) {
         transactionHistory.appendChild (expenseTransaction)
     }
 }
+
