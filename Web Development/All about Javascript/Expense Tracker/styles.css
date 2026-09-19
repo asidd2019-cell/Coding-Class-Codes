@@ -251,6 +251,7 @@ input {
     /* flex-direction: column; */
     justify-content: space-between;
     padding-left: 10px;
+    margin: 5px;
 }
 
 .expense-transaction {
@@ -262,6 +263,7 @@ input {
     display: flex;
     justify-content: space-between;
     padding-left: 10px;
+    margin: 5px;
 }
 
 .transaction-description {
@@ -292,12 +294,13 @@ input {
 
 .fa-solid {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-end;
     align-items: center;
-    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 2px;
     height: 100%;
-    width: 100px;
+    width: 50px;
     font-size: 20px;
 }
 
@@ -305,7 +308,6 @@ input {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     gap: 10px;
-    padding-right: 10px;
 }

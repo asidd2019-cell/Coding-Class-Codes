@@ -4,8 +4,13 @@ const description = document.getElementById("description")
 const amount = document.getElementById("amount")
 const addTransaction = document.getElementById("addTransaction")
 const transactionHistory = document.getElementById("transactionHistory")
+const incomeTransactionHistory = document.getElementById("incomeTransactionHistory")
+const expenseTransactionHistory = document.getElementById("expenseTransactionHistory")
+const allPage = document.getElementById("allPage")
+const incomePage = document.getElementById("incomePage")
+const expensePage = document.getElementById("expensePage")
 
-const expenses = []
+let expenses = []
 
 addTransaction.addEventListener("click", (e) => {
     e.preventDefault()
@@ -17,14 +22,16 @@ addTransaction.addEventListener("click", (e) => {
         return
     }
 
+    const TransactionDate = new Date().toISOString().slice(0, 10);
     expenses.push({
         "type":transactionType,
         "description":transactionDesc,
-        "amount":transactionAmount
+        "amount":transactionAmount,
+        "date":TransactionDate
     })
     console.log(expenses)
     CalculateTotalIncomeAndExpense()
-    ShowTransaction(transactionAmount,transactionDesc,"2026-09-14",transactionType)
+    ShowTransaction(transactionAmount,transactionDesc,TransactionDate,transactionType)
 })
 
 function CalculateTotalIncomeAndExpense () {
@@ -55,7 +62,6 @@ function CalculateTotalIncomeAndExpense () {
 function ShowTransaction (amount,description,date,type) {
 
     if (type == "income") {
-
         const incomeTransaction = document.createElement("div")
         incomeTransaction.classList.add ("income-transaction")
 
@@ -85,6 +91,8 @@ function ShowTransaction (amount,description,date,type) {
         
         incomeCancelTransaction.addEventListener ("click", () => {
             incomeTransaction.remove()
+            expenses = expenses.filter(n => n.amount != amount || n.description != description || n.date != date || n.type != type)
+            CalculateTotalIncomeAndExpense()
         })
 
         incomeTransactionDetails.appendChild (incomeTransactionDescription)
@@ -101,6 +109,8 @@ function ShowTransaction (amount,description,date,type) {
         incomeTransactionAmount.appendChild (incomeTransactionAmountSpan)
 
         transactionHistory.appendChild (incomeTransaction)
+
+        incomeTransactionHistory.appendChild (incomeTransaction)
     }
 
     if (type == "expense") {
@@ -133,6 +143,8 @@ function ShowTransaction (amount,description,date,type) {
 
         expenseCancelTransaction.addEventListener ("click", () => {
             expenseTransaction.remove()
+            expenses = expenses.filter(n => n.amount != amount || n.description != description || n.date != date || n.type != type)
+            CalculateTotalIncomeAndExpense()
         })
 
         expenseTransaction.appendChild (expenseTransactionDetails)
@@ -147,6 +159,39 @@ function ShowTransaction (amount,description,date,type) {
         expenseTransactionDetails.appendChild (expenseTransactionDate)
 
         transactionHistory.appendChild (expenseTransaction)
+
+        expenseTransactionHistory.appendChild (expenseTransaction)
     }
 }
+
+allPage.addEventListener ("click", () => {
+    allPage.classList.add ("button-active")
+    incomePage.classList.remove ("button-active")
+    expensePage.classList.remove ("button-active")
+
+    incomeTransactionHistory.style.display = 'flex'
+    expenseTransactionHistory.style.display = 'flex'
+    transactionHistory.style.display = 'flex'
+})
+
+incomePage.addEventListener ("click", () => {
+    incomePage.classList.add ("button-active")
+    allPage.classList.remove ("button-active")
+    expensePage.classList.remove ("button-active")
+
+    incomeTransactionHistory.style.display = 'flex'
+    expenseTransactionHistory.style.display = 'none'
+    transactionHistory.style.display = 'none'
+})
+
+expensePage.addEventListener ("click", () => {
+    expensePage.classList.add ("button-active")
+    allPage.classList.remove ("button-active")
+    incomePage.classList.remove ("button-active")
+
+    incomeTransactionHistory.style.display = 'none'
+    expenseTransactionHistory.style.display = 'flex'
+    transactionHistory.style.display = 'none'
+})
+
 
