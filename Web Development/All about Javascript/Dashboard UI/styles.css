@@ -4,12 +4,12 @@ body {
     display: flex;
 }
 
-
 .result {
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 15px;
+    height: 100vh;
 }
     
 .total-sales {
@@ -20,19 +20,33 @@ body {
 }
 
 .visits {
-    grid-column: span 3 / span 3;
+    grid-column: span 0 / span 0;
     grid-row: span 2 / span 2;
     grid-column-start: 4;
     background-color: whitesmoke;
     border-radius: 5px;
+    height: 155px;
+    width: 300px;
+}
+
+.visits-img {
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 
 .payments {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
+    grid-column: span 0 / span 0;
+    grid-row: span 3 / span 3;
     grid-column-start: 7;
     background-color: whitesmoke;
     border-radius: 5px;
+}
+
+.payments-img {
+    display: flex;
+    justify-self: center;
+    align-items: center;
 }
 
 .operation-effect {
@@ -44,9 +58,10 @@ body {
 
 .store-sales-trend {
     grid-column: span 10 / span 10;
-    grid-row: span 4 / span 4;
-    grid-row-start: 3;
+    grid-row: span 30 / span 30;
+    grid-row-start: 4;
     background-color: whitesmoke;
+    margin-top: 10px;
     border-radius: 5px;
 }
         
