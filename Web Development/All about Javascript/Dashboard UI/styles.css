@@ -1,119 +1,251 @@
 body {
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     display: flex;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
+
+
+/* =========================
+   MAIN GRID
+========================= */
 
 .result {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(7, 1fr);
-    gap: 15px;
-    height: 100vh;
+
+    grid-template-columns: repeat(10, minmax(0, 1fr));
+    grid-template-rows: 155px 420px;
+
+    column-gap: 30px;
+    row-gap: 15px;
+
+    width: 100%;
+    height: auto;
+
+    flex: 1;
+    min-width: 0;
+
+    padding: 15px;
+
+    box-sizing: border-box;
 }
-    
+
+
+/* =========================
+   TOP 4 CARDS
+========================= */
+
 .total-sales {
-    grid-column: span 3 / span 3;
-    grid-row: span 2 / span 2;
+    grid-column: 1 / span 3;
+    grid-row: 1;
+
+    height: 100%;
+    
+    margin-right: 23px;
+
     background-color: whitesmoke;
     border-radius: 5px;
+
+    box-sizing: border-box;
 }
 
 .visits {
-    grid-column: span 0 / span 0;
-    grid-row: span 2 / span 2;
-    grid-column-start: 4;
+    grid-column: 4 / span 2;
+    grid-row: 1;
+
+    height: 100%;
+    width: auto;
+
     background-color: whitesmoke;
     border-radius: 5px;
-    height: 155px;
-    width: 300px;
-}
 
-.visits-img {
-    display: flex;
-    justify-self: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
 .payments {
-    grid-column: span 0 / span 0;
-    grid-row: span 3 / span 3;
-    grid-column-start: 7;
+    grid-column: 6 / span 2;
+    grid-row: 1;
+
+    height: 100%;
+    width: auto;
+
     background-color: whitesmoke;
     border-radius: 5px;
-}
 
-.payments-img {
-    display: flex;
-    justify-self: center;
-    align-items: center;
+    box-sizing: border-box;
 }
 
 .operation-effect {
-    grid-row: span 2 / span 2;
-    grid-column-start: 10;
+    grid-column: 8 / span 2;
+    grid-row: 1;
+
+    height: 100%;
+    width: 85%;
+
     background-color: whitesmoke;
     border-radius: 5px;
+
+    box-sizing: border-box;
 }
 
-.store-sales-trend {
-    grid-column: span 10 / span 10;
-    grid-row: span 30 / span 30;
-    grid-row-start: 4;
-    background-color: whitesmoke;
-    margin-top: 10px;
-    border-radius: 5px;
+
+/* =========================
+   PUSH TOP 4 TO THE RIGHT
+========================= */
+
+.total-sales,
+.visits,
+.payments,
+.operation-effect {
+    transform: translateX(15%);
 }
-        
+
+
+/* =========================
+   VISITS IMAGE
+========================= */
+
+.visits-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.visits-img img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   PAYMENTS IMAGE
+========================= */
+
+.payments-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    overflow: hidden;
+}
+
+.payments-img img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+/* =========================
+   STORE SALES TREND
+========================= */
+
+.store-sales-trend {
+    grid-column: 1 / span 10;
+    grid-row: 2;
+
+    background-color: whitesmoke;
+    border-radius: 5px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   SIDEBAR
+========================= */
 
 .side-bar {
     height: 100vh;
     width: 200px;
+    flex: 0 0 200px;
+
     background-color: rgb(6, 23, 80);
+
     border-radius: 5px;
+
     color: white;
+
     display: flex;
     flex-direction: column;
+
+    box-sizing: border-box;
 }
+
+
+/* =========================
+   COMPANY TITLE
+========================= */
 
 .company-title {
     display: flex;
     flex-direction: column;
+
     justify-content: center;
     align-items: center;
+
     height: 50px;
     width: 100%;
+
     font-size: 25px;
 }
 
+
+/* =========================
+   SIDEBAR OPTIONS
+========================= */
+
 .bar-options {
     margin-top: 30px;
+
     width: 100%;
+
     display: flex;
     flex-direction: column;
+
     gap: 25px;
+
     font-size: 17px;
 }
 
+
 .bar-option {
     display: flex;
+
     padding-left: 20px;
+
     height: 50px;
+
     align-items: center;
+
+    box-sizing: border-box;
 }
 
 
+/* =========================
+   SELECTED OPTION
+========================= */
 
 .chosen-option {
     display: flex;
+
     align-items: center;
+
     padding-left: 20px;
+
     width: 180px;
     height: 50px;
-    background-color: rgb(44, 152, 253);
-}
 
-.result {
-    display: grid;
-    height: 500px;
+    background-color: rgb(44, 152, 253);
+
+    box-sizing: border-box;
 }
