@@ -1,110 +1,234 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
 </head>
+
 <body>
+
     <div class="side-bar">
+
         <span class="company-title">logoipsum</span>
 
         <div class="bar-options">
-            <span class="bar-option">Dashboard</span>
-            <span class="bar-option">Form</span>
-            <span class="bar-option">List</span>
-            <span class="bar-option">Profile</span>
-            <span class="chosen-option">Result</span>
-            <span class="bar-option">Exception</span>
-            <span class="bar-option">Account</span>
+
+            <span class="bar-option">
+                <i class="fa-solid fa-table-cells"></i>
+                <span>Dashboard</span>
+            </span>
+
+            <span class="bar-option">
+                <i class="fa-solid fa-pen-to-square"></i>
+                <span>Form</span>
+            </span>
+
+            <span class="bar-option">
+                <i class="fa-solid fa-table"></i>
+                <span>List</span>
+            </span>
+
+            <span class="bar-option">
+                <i class="fa-regular fa-id-card"></i>
+                <span>Profile</span>
+            </span>
+
+            <span class="chosen-option">
+                <i class="fa-regular fa-circle-check"></i>
+                <span>Result</span>
+            </span>
+
+            <span class="bar-option">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Exception</span>
+            </span>
+
+            <span class="bar-option">
+                <i class="fa-regular fa-user"></i>
+                <span>Account</span>
+            </span>
+
         </div>
+
     </div>
 
 
-    <div class="result">
-        <div class="total-sales">
-            <span>Total Sales</span>
-            <span>$ 154,430</span>
+    <div class="main-content">
+
+        <!-- TOP PAGE HEADER -->
+
+        <div class="top-bar">
+
+            <div class="hamburger">
+                ☰
+            </div>
+
+            <div class="top-bar-right">
+
+                <span class="search">⌕</span>
+
+                <span class="help">?</span>
+
+                <span class="notification">♧</span>
+
+                <span class="profile">
+                    <span class="profile-circle"></span>
+                    <span>John</span>
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="result">
+
+            <!-- TOTAL SALES -->
+
+            <div class="total-sales">
+
+                <span>Total Sales</span>
+                <span>$ 154,430</span>
 
                 <div class="week-ratio">
                     <span>Week ratio</span>
                     <span>13%</span>
-                    <!-- red arrow pointing up icon -->
                 </div>
 
                 <div class="day-ratio">
                     <span>Day ratio</span>
                     <span>10%</span>
-                    <!-- gray arrow pointing down icon -->
                 </div>
-            <hr>
-            <span>Day Sales $15,433</span>
-        </div>
 
-        <div class="visits">
-            <span>Visits</span>
-            <span>6,480</span>
-            <div class="visits-img">
-                <img src="visits.jpeg" alt="">
+                <hr>
+
+                <div class="day-sales">
+                    <span class="big-span">Day Sales $15,433</span>
+                </div>
+                
+
             </div>
-            <hr>
+
+
+            <!-- VISITS -->
+
+            <div class="visits">
+
+                <span>Visits</span>
+                <span>6,480</span>
+
+                <div class="visits-img">
+                    <img src="visits.jpeg" alt="">
+                </div>
+
+                <hr>
+
                 <div class="day-visits">
-                    <span>Day visits 4,280</span>
+                    <span class="big-span">Day visits 4,280</span>
                 </div>
-        </div>
 
-        <div class="payments">
-            <span>Payments</span>
-            <span>5,320</span>
-            <div class="payments-img">
-                <img src="payments.jpeg" alt="">
             </div>
-            <hr>
+
+
+            <!-- PAYMENTS -->
+
+            <div class="payments">
+
+                <span>Payments</span>
+                <span>5,320</span>
+
+                <div class="payments-img">
+                    <img src="payments.jpeg" alt="">
+                </div>
+
+                <hr>
+
                 <div class="convertion-rate">
-                    <span>Convertion rate 50%</span>
-                </div>
-        </div>
-
-        <div class="operation-effect">
-            <span>Operation Effect</span>
-            <span>88%</span>
-        </div>
-
-        <div class="store-sales-trend">
-            <div class="horizontal-bar">
-                <div class="sales-and-visits">
-                    <span>Sales</span>
-                    <span>Visits</span>
+                    <span class="big-span">Convertion rate 50%</span>
                 </div>
 
-                <div class="all-dates">
-                    <span>All day</span>
-                    <span>All week</span>
-                    <span>All month</span>
-                    <span>All year</span>
-                </div>
-
-                <div class="year-span">
-                    <span>2020-01-01</span>
-                    <span>~</span>
-                    <span>2020-12-31</span>
-                </div>
             </div>
 
-            <span>Store Sales Trend</span>
-            <img src="sales-trend.jpeg" alt="">
 
-            <div class="sales-ranking">
-                <span>Sales ranking</span>
+            <!-- OPERATION EFFECT -->
 
-                <span>No. 0 Shop</span>
-                <span>No. 1 Shop</span>
-                <span>No. 2 Shop</span>
-                <span>No. 3 Shop</span>
-                <span>No. 4 Shop</span>
-                <span>No. 5 Shop</span>
-                <span>No. 6 Shop</span>
+            <div class="operation-effect">
+
+                <span>Operation Effect</span>
+                <span>88%</span>
+
             </div>
+
+
+            <!-- STORE SALES TREND -->
+
+            <div class="store-sales-trend">
+
+                <div class="horizontal-bar">
+
+                    <div class="sales-and-visits">
+                        <span>Sales</span>
+                        <span>Visits</span>
+                    </div>
+
+                    <div class="all-dates">
+                        <span>All day</span>
+                        <span>All week</span>
+                        <span>All month</span>
+                        <span>All year</span>
+                    </div>
+
+                    <div class="year-span">
+                        <span>2020-01-01</span>
+                        <span>~</span>
+                        <span>2020-12-31</span>
+                    </div>
+
+                </div>
+
+
+                <div class="store-sales-content">
+
+                    <div class="sales-chart">
+
+                        <span>Store Sales Trend</span>
+
+                        <img src="sales-trend.jpeg" alt="">
+
+                    </div>
+
+
+                    <div class="sales-ranking">
+
+                        <span>Sales ranking</span>
+
+                        <span>No. 0 Shop</span>
+                        <span>No. 1 Shop</span>
+                        <span>No. 2 Shop</span>
+                        <span>No. 3 Shop</span>
+                        <span>No. 4 Shop</span>
+                        <span>No. 5 Shop</span>
+                        <span>No. 6 Shop</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
         </div>
+
     </div>
+
+
+    <script src="script.js"></script>
+
 </body>
-<script src="script.js"></script>
+
 </html>
